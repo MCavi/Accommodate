@@ -1,0 +1,23 @@
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.img-container {
+    
+}
+
+.link-container {
+    margin: 20px;
+    
+}
+
+
+
+img {
+    width: 10%;
+    height: 10%
+}

@@ -1,23 +1,231 @@
+/* button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+} */
 
-
-header {
+.nav {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    position: relative;
+    height: 75px;
 }
 
 .img-container {
-    
+    width: 200px;
+    display: flex;
+    align-items: center;
 }
 
 .link-container {
-    margin: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 200px;
+    align-items: center;
+}
+
+.logged-in-container {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 200px;
+    align-items: center;
+    width: 18%;
+    height: 100%;
+}
+
+.li-a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: sans-serif;
     
 }
 
-
-
-img {
-    width: 10%;
-    height: 10%
+.img-container > img {
+    max-width: 75px;
+    max-height: 75px
 }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1490029386/fisherman-cabin-hamnoy-lofoten-islands-norway-NORWAY0320.jpg?itok=cpPuUjh1);
+    background-size: cover;
+    position: relative;
+    min-height: 1000px;
+
+}
+
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  width: fit-content;
+  padding: 32px;
+  
+  height: fit-content;
+  transform: translate(-50%, -50%);
+}
+
+.links {
+    height: 100%;
+}
+
+.submit-buttons {
+     height: 100%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
+    color: white;
+    font-size: 14px;
+    border-bottom: 2px transparent solid;
+}
+
+.submit-buttons:hover{
+    border-bottom: 2px white solid;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 504px;
+
+}
+
+.login-form-input {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.login-form-input > * {
+    /* display: flex; */
+    width: 100%;
+    padding: 11px;
+    background-color: rgb(232, 240, 254);
+    box-shadow: 0;
+    outline: 0;
+    font-size: 17px;
+    border-radius: 3px
+
+}
+
+input {
+    border: 1px transparent solid;
+}
+
+input:focus{
+    border-color: rgb(0, 132, 137);
+}
+
+.login-form-input > input[type="submit"], .login-form-input > button {
+    background-color: rgb(255, 90, 95);
+    color: white;
+}
+
+.login-header {
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: left;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: rgb(72, 72, 72);
+    font-weight: 800;
+}
+
+.login-form-input > p {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.profile-icon {
+    border-radius: 50%;
+    width: 75%;
+}
+
+.hidden {
+    display: none;
+}
+
+.icon-holder:hover{
+    border-color: white;
+}
+
+.icon-holder {
+    height: 100%;
+    border-bottom: 2px transparent solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 60px;
+    cursor: pointer;
+}
+
+.profile-drop-down {
+    position: absolute;
+    right: 20px;
+    top: 83px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1px;
+    box-shadow: 0px, 0px, 5px;   
+}
+
+.whole-screen {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    
+}
+
+.dropdown-li{
+    padding: 16px;
+    border-bottom: 1px rgb(242, 242, 242) solid;
+    cursor: pointer;
+}
+
+.dropdown-li:hover{
+    border-color:#767676;
+}
+
+.dropdown-button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
+    color: rgb(118, 118, 118);    
+    width: 248px;
+    height: 18px;
+    text-align: left;
+    font-size: 14;
+    display: block;
+}
+
+.dropdown-button > p {
+    font-size: 14px;
+}
+
+button:focus {outline:0;}

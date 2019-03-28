@@ -4,10 +4,18 @@
     <title>Accommodate</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <% if logged_in? %>
+      <script type="text/javascript">
+          window.currentUser =
+          <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+      </script>
+    <% end %>
     <script type="text/javascript">
-      window.splashLogo = '<%= image_url('splash.jpg') %>'
+      window.splashLogo = '<%= image_url('airbnbishlogo.png') %>'
+      window.defaultThumbnail = '<%= image_url('default-thumbnail.jpg') %>'
     </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <%= javascript_include_tag 'application' %>
   </head>
 

@@ -14,12 +14,13 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         
+        // this.props.actionForm(user).then(this.props.closeModal);
         this.props.actionForm(user).then(this.props.closeModal);
     }
 
     handleSubmitDemo(e){
         e.preventDefault();
-        const user = {email: "mike3", password: "starwars"};
+        const user = { email: "mike3", password: "starwars", thumbnailUrl: "https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/003/361/medium/DSC00423.JPG?1549343867"};
         this.props.demoLogin(user).then(this.props.closeModal);
     }
 

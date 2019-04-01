@@ -22,11 +22,12 @@ class NavBar extends React.Component {
     }
 
     render(){
+        
         if(!this.props.id){
             return (
                 <div className="nav">
                     <div className="img-container">
-                        <img className="logo" src={window.splashLogo} alt="" />
+                        <img className="logo" src={window.redLogo} alt="" />
                     </div>
                     <div className="link-container">
                         <div className="links">
@@ -40,9 +41,10 @@ class NavBar extends React.Component {
             )
         } else {
             return (
-                <div className="nav" style={{ borderBottom: '1px white solid' }}>
+                <div className="nav" style={{
+                    borderBottom: '1px rgb(228, 228, 228) solid'}}>
                     <div className="img-container">
-                        <img className="logo" src={window.splashLogo} alt="" />
+                        <img className="logo" src={window.redLogo} alt="" />
                     </div>
                     { this.state.dropped ? (<div className="whole-screen" onClick={this.unDrop}></div>) : null }
                     <div className="logged-in-container">

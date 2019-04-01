@@ -1,0 +1,257 @@
+/* -------------------------------------------------- */
+.show-pictures {
+    display: flex;
+    position: relative;
+    top: 70px;
+    left: 0px;
+    width: 100vw;
+    height: 592px;
+    border: .5px black solid;
+    cursor: pointer;
+}
+
+.show-pictures:hover {
+    /* filter: brightness(73%); */
+}
+
+
+
+.show-pictures > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.show-pictures > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-1 {
+    flex: 2;
+    border: .5px black solid;
+    overflow: hidden;
+    /* filter: brightness(100%) !important; */
+}
+
+.pic-1 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-1:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.picture-top-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture-top-row > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-2 {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-2 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-2:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.pic-3 {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-3 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-3:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.picture-bottom-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture-bottom-row > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-4 {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-4 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-4:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.pic-5  {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+
+.pic-5 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-5:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+.show{
+    position:relative;
+    margin: 0 auto; 
+    top:80px;
+    width:1048px;
+    height:4602px; 
+    display:flex;
+    /* border:3px red solid; */
+    font-size: 16px;
+    font-weight: 200px;
+    color:#484848;
+}
+
+.show * {
+    font-family: sans-serif;
+}
+
+.show-info{ 
+    width: 595px;
+    height:100%;
+    padding:8px;
+}
+
+
+
+.show-info div {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px rgb(235,235,235) solid;
+}
+
+.show-title {
+    font-size: 32px;
+    padding-bottom: 0px;
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+
+.show-checkout{
+    width:377px;
+    height:361px;
+    padding:8px 24px 55px 24px; 
+    border:1px rgb(235,235,235) solid;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    margin-left: 55px;
+}
+
+
+.checkout-top {
+    height: 83px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px rgb(235,235,235) solid;
+}
+
+.checkout-rate {
+    width: 105px;
+    display: flex;
+    justify-content: space-between;
+
+}
+    .span-rate {
+        font-size: 22px;
+        color: rgb(72,72,72);
+        font-weight: 800;
+    }
+
+    .span-per-night {
+        width: 52px;
+        padding-top: 7px;
+        font-size: 12px;
+        color: rgb(72,72,72);
+        font-weight: 600;
+    }
+
+.checkout-date {
+    height: 83px;
+}
+
+    .p-dates {
+        font-size: 12px;
+        color: rgb(72,72,72);
+        font-weight: 600;
+
+    }
+
+
+
+.checkout-submit {
+    background-color: rgb(255, 90, 95);
+    color: white;
+    height: 47px;
+    width: 278px auto;   
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+
+
+/* TESTING */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+
+
+

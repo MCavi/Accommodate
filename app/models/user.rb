@@ -4,7 +4,9 @@ class User < ApplicationRecord
     validates :email, :session_token, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
-    has_many :listings
+    has_many :listings,
+        class_name: :Listing,
+        foreign_key: :host_id
 
     has_many :bookings
     has_many :reviews

@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Listing.destroy_all
+Review.destroy_all
 
 user1 = User.create!({email: "mike3", password: "starwars", first_name: "Mike", last_name: "Yoon"})
 location1 = user1.listings.create!({title: "Lovely apartment", address: "21 Division St Greenwich, CT 06830", lat: 41.001269, long: -73.657621, rate: 200, capacity: 4, num_bedroom: 2, num_bed: 2, num_bathroom: 2, description: "Clean house just 45 minutes away from NYC."})

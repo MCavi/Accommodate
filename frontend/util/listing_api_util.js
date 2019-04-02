@@ -15,6 +15,23 @@ export const fetchListing = listingId => (
     })
 )
 
+// export const fetchListings = () => (
+//     $.ajax({
+//         method: "GET",
+//         url: '/api/reviews'
+//     })
+// )
+
+export const createReview = review => {
+    return(
+        $.ajax({
+            method: "POST",
+            url: `/api/reviews`,
+            data: {review}
+        })
+    )
+}
+
 export const createListing = listing => (
     $.ajax({method: "POST",
     url: `/api/listings`,

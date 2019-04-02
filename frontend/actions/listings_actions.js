@@ -4,15 +4,19 @@ import * as ListingApiUtil from '../util/listing_api_util';
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const REMOVE_LISTING = "REMOVE_LISTING";
+export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+
+
+
 
 export const receiveListings = listings => ({
     type: RECEIVE_LISTINGS,
     listings
 });
 
-export const receiveListing = listing => ({
+export const receiveListing = payload => ({
     type: RECEIVE_LISTING,
-    listing
+    payload
 });
 
 export const removeListing = listingId => ({
@@ -20,12 +24,19 @@ export const removeListing = listingId => ({
     listingId
 })
 
+export const receiveReview = ({review, average_rating, author}) => ({
+    type: RECEIVE_REVIEW, 
+    review, 
+    average_rating, 
+    author
+})
+
 export const fetchListings = (filters) => dispatch => {
     return ListingApiUtil.fetchListings(filters).then(listings => dispatch(receiveListings(listings)))
 };
 
 export const fetchListing = (listing) => dispatch => {
-    return ListingApiUtil.fetchListing(listing).then(listing => dispatch(receiveListing(listing)))
+    return ListingApiUtil.fetchListing(listing).then(payload => dispatch(receiveListing(payload)))
 };
 
 export const createListing = (listing) => dispatch => {
@@ -38,4 +49,8 @@ export const updateListing = (listing) => dispatch => {
 
 export const deleteListing = (listingId) => dispatch => {
     return ListingApiUtil.deleteListing(listingId).then(listingId => dispatch(removeListing(listingId)))
+};
+
+export const createReview = (review) => dispatch => {
+    return ListingApiUtil.createReview(review).then(review => dispatch(receiveReview(review)))
 };

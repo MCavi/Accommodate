@@ -5,7 +5,7 @@ const Splash = () => {
     
     return(
 
-        <div>
+        <div className="splash-page">
             <NavBar />
         </div>
 

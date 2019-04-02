@@ -2,6 +2,7 @@ import React from 'react';
 import ListingIndexItem from './listing_index_item';
 import {Link} from 'react-router-dom'
 import MarkerManager from '../../util/marker_manager';
+import NavBar from '../navbar/navbar';
 
 class ListingIndex extends React.Component {
     constructor(props) {
@@ -53,7 +54,6 @@ class ListingIndex extends React.Component {
             }
 
             const marker = new google.maps.Marker(markerOptions);
-            // if (this.map && this.map.getBounds().contains(markerOptions.position)) {
             return (
                 <a key={listing.id} className="grid-link" href={`/#/listings/${listing.id}`}>
                     <div className="grid-item">
@@ -63,7 +63,6 @@ class ListingIndex extends React.Component {
                     </div>
                 </a>
             )
-            // };
         });
 
 
@@ -71,13 +70,16 @@ class ListingIndex extends React.Component {
        
 
         return (
-            <div className="listing-index">
-                <div id="map"></div>
-                
-                <div className="grid-container">
-                    {listingItems}
+            <>
+                <NavBar /> 
+                <div className="listing-index">
+                    <div id="map"></div>
+                    
+                    <div className="grid-container">
+                        {listingItems}
+                    </div>
                 </div>
-            </div>
+            </>
         );
 
     };

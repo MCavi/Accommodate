@@ -8,6 +8,10 @@ class Listing < ApplicationRecord
         foreign_key: :host_id,
         class_name: :User
 
+    has_many :bookings
+
+    has_many :reviews
+
         def self.in_bounds(bounds)
             self.where("lat < ?", bounds[:northEast][:lat])
             .where("lat > ?", bounds[:southWest][:lat])

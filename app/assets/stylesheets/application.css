@@ -14,4 +14,6 @@
  *= require_self
  */
 
- 
+ * {
+     font-family: 'Nunito Sans', sans-serif;
+ }

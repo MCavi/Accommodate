@@ -9,7 +9,7 @@ const listingsReducer = (oldState = {}, action) => {
         case RECEIVE_LISTINGS:
             return action.listings;
         case RECEIVE_LISTING:
-            return merge({}, oldState, {[action.listing.id]: action.listing});
+            return merge({}, oldState, {[action.payload.listing.id]: action.payload.listing});
         case REMOVE_LISTING:
             const newState = merge({}, oldState);
             delete(newState[action.listingId]);

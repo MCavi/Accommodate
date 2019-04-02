@@ -4,7 +4,7 @@
     <title>Accommodate</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAPjYkDq0-iiCd6W5-qCw46J-r0EW39L1U" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAPjYkDq0-iiCd6W5-qCw46J-r0EW39L1U&libraries=places" %>
 
     <% if logged_in? %>
       <script type="text/javascript">
@@ -13,11 +13,15 @@
       </script>
     <% end %>
     <script type="text/javascript">
-      window.splashLogo = '<%= image_url('airbnbishlogo.png') %>';
+      window.whiteLogo = "<%= image_url('airbnbishlogo.png') %>"
+      window.splashImage = "<%= image_url('naomi-hebert-188183-unsplash.jpg') %>"
       window.redLogo = '<%= image_url('airbnb-logo-red.png') %>';
       window.defaultThumbnail = '<%= image_url('default-thumbnail.jpg') %>';
       window.brownHouse = '<%= image_url('brown-house.jpg') %>';
     </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <%= javascript_include_tag 'application' %>

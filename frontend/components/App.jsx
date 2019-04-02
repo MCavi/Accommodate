@@ -6,16 +6,19 @@ import LogInFormContainer from './session_form/login_form_container';
 import NavBar from './navbar/navbar';
 import Modal from './modal/modal'
 import ListingIndexContainer from './listings/listing_index_container';
-import PostShowContainer from './listings/listing_show_container';
+import ListingShowContainer from './listing_show/listing_show_container';
 import Splash from './splash/splash';
+import {AuthRoute} from '../util/route_util';
 
 const App = () => (
         <div className="yeah">
             <Modal /> 
-            <NavBar />  
+            <AuthRoute exact path="/" component={Splash} />
             <Route exact path="/index" component={ListingIndexContainer} />
-            <Route exact path="/listings/:listingId" component={PostShowContainer} />
+            <Route exact path="/listings/:listingId" component={ListingShowContainer} />
         </div>
+
+
 
 );
 

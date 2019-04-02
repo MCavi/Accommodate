@@ -12,6 +12,13 @@ class NavBar extends React.Component {
         this.unDrop = this.unDrop.bind(this) 
     }
 
+    initAutocomplete() {
+        const map = document.getElementById('map');
+        const input = document.getElementById('pac-input');
+        const searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    }
+
 
     dropDown(){
         this.setState({dropped: true})
@@ -25,9 +32,9 @@ class NavBar extends React.Component {
         
         if(!this.props.id){
             return (
-                <div className="nav">
+                <div className="nav" style={{backgroundColor:"transparent", borderBottom:"0px"}}>
                     <div className="img-container">
-                        <img className="logo" src={window.redLogo} alt="" />
+                        <img className="logo" src={window.whiteLogo} alt="" />
                     </div>
                     <div className="link-container">
                         <div className="links">
@@ -41,10 +48,15 @@ class NavBar extends React.Component {
             )
         } else {
             return (
-                <div className="nav" style={{
-                    borderBottom: '1px rgb(228, 228, 228) solid'}}>
-                    <div className="img-container">
-                        <img className="logo" src={window.redLogo} alt="" />
+                <div className="nav" 
+                    style={{borderBottom: '1px rgb(228, 228, 228) solid'}}
+                >
+                    <div className="img-container" style={{paddingLeft:"20px"}}>
+                        <img className="redLogo" src={window.redLogo} alt="" />
+                        <form className="search-field">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <input id="pac-input" type="text" placeholder="Try Bangkok" />
+                        </form>
                     </div>
                     { this.state.dropped ? (<div className="whole-screen" onClick={this.unDrop}></div>) : null }
                     <div className="logged-in-container">

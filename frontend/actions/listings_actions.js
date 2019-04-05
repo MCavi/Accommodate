@@ -9,10 +9,12 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 
 
 
-export const receiveListings = listings => ({
-    type: RECEIVE_LISTINGS,
-    listings
-});
+export const receiveListings = listings => {
+    return ({
+        type: RECEIVE_LISTINGS,
+        listings
+    })
+};
 
 export const receiveListing = payload => ({
     type: RECEIVE_LISTING,

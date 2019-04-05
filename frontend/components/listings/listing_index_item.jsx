@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-router-dom';
 
 class ListingIndexItem extends React.Component {
     constructor(props){
@@ -8,21 +7,26 @@ class ListingIndexItem extends React.Component {
     }
 
     render(){
-
+        
+        const pics = ['grid-item-image-container1', 'grid-item-image-container2', 'grid-item-image-container3', 'grid-item-image-container4', 'grid-item-image-container5']
+        const random = Math.floor(Math.random() * 4)
+        const pic = pics[random];
+        
+        // debugger
         return(
             <>
 
-                <div className="grid-item-image-container" style={{ backgroundImage: `url('${window.brownHouse}')` }}>
+                <div className={pic}>
                     <div className="arrow-container">
-                        <div className="arrows" onClick={this.handleLeft}><i class="fas fa-angle-left"></i></div>
-                        <div className="arrows" onClick={this.handleRight}><i class="fas fa-angle-right"></i></div>
+                        <div className="arrows" onClick={this.handleLeft}><i className="fas fa-angle-left"></i></div>
+                        <div className="arrows" onClick={this.handleRight}><i className="fas fa-angle-right"></i></div>
                     </div>
                 </div>
 
                 <div className="info-container">
 
                     <div className="top-text">
-                        <div>ENTIRE HOUSE · {this.state.num_bed} BEDS</div>
+                        <div>{this.state.listing_type.toUpperCase()} · {this.state.num_bed} BEDS</div>
                     </div>
 
                     <div className="title-span">

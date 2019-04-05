@@ -10,8 +10,25 @@ class Api::ListingsController < ApplicationController
     end
     
     def index
-        @listings = Listing.in_bounds(params[:bounds])
+        
+        capacity = params[:capacity]
+
+        listings = params[:bounds] ? Listing.in_bounds(params[:bounds]) : Listing.all
+
+        if capacity
+            listings = listings.where(capacity: capacity)
+        end 
+        
+
+        # if params[:minSeating] && params[:maxSeating]
+        # benches = benches.where(seating: seating_range)
+        # end
+
+        @listings = listings
         render :index
+
+        # @listings = Listing.in_bounds(params[:bounds])
+        # render :index
     end
 
     def show
@@ -28,7 +45,7 @@ class Api::ListingsController < ApplicationController
 
     private
     def listings_params
-        params.require(:listing).permit(:title, :address, :lat, :long, :rate, :capacity, :num_bedroom, :num_bed, :num_bathroom, :description)
+        params.require(:listing).permit(:title, :address, :listing_type, :lat, :long, :rate, :capacity, :num_bedroom, :num_bed, :num_bathroom, :description)
     end     
 
 end 

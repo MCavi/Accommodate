@@ -10,3 +10,5 @@ class Review < ApplicationRecord
     belongs_to :listing
 
 end 
+
+# {{ width: `${(ratingTotal / (numRating * 5)) * 100}%` }}

@@ -3,6 +3,7 @@ import ListingIndexItem from './listing_index_item';
 import {Link} from 'react-router-dom'
 import MarkerManager from '../../util/marker_manager';
 import NavBar from '../navbar/navbar';
+import FilterBar from '../navbar/filter_bar';
 
 class ListingIndex extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class ListingIndex extends React.Component {
         };
         
         this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        window.map = this.map;
         this.MarkerManager = new MarkerManager(this.map);
 
         this.listener = google.maps.event.addListener(this.map, 'idle', this.idleListener);
@@ -72,6 +74,7 @@ class ListingIndex extends React.Component {
         return (
             <>
                 <NavBar /> 
+                {/* <FilterBar /> */}
                 <div className="listing-index">
                     <div id="map"></div>
                     

@@ -1,0 +1,486 @@
+/* -------------------------------------------------- */
+.show-pictures {
+    display: flex;
+    position: relative;
+    top: 70px;
+    left: 0px;
+    width: 100vw;
+    height: 592px;
+    border: .5px black solid;
+    cursor: pointer;
+}
+
+/* .show-pictures:hover{
+    filter: brightness(73%);
+}
+
+.show-pictures:hover .pic-1 {
+    filter: brightness(73%);
+    filter: brightness(100%) !important;
+} */
+
+
+
+.show-pictures > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.show-pictures > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-1 {
+    flex: 2;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-1 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-1:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.picture-top-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture-top-row > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-2 {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-2 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-2:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.pic-3 {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-3 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-3:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.picture-bottom-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture-bottom-row > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-4 {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+.pic-4 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-4:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+.pic-5  {
+    width: 100%;
+    height: 50%;
+    border: .5px black solid;
+    overflow: hidden;
+}
+
+
+.pic-5 img {
+    max-width: 100%;
+    -webkit-transition: all .4s ease;
+
+}
+
+.pic-5:hover img {
+    -webkit-transform:scale(1.05);
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+.show{
+    position:relative;
+    margin: 0 auto; 
+    top:80px;
+    width:1048px;
+    height:4602px; 
+    display:flex;
+}
+
+.show * {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.show-info{ 
+    width: 595px;
+    height:100%;
+    padding:8px;
+}
+
+// .show-info div {
+//     padding: 13px 0 13px 0;
+
+// }
+
+.show-title {
+    color: rgb(72,72,72);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+.listing-type > span {
+    padding-left: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(72,72,72);
+    line-height: 22px;
+}
+
+.show-address {
+    color: rgb(72,72,72);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    /* border-bottom: 1px rgb(235,235,235) solid; */
+}
+
+.show-capacity {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 351px;
+    height: 22px;
+    margin-bottom: 30px;
+    color: rgb(72,72,72);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.show-title {
+    font-size: 32px;
+    font-weight: 900;
+    padding-bottom: 0px;
+}
+
+.show-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(72,72,72);
+    line-height: 22px;
+    margin-top: 27px;
+    padding-bottom: 27px;
+}
+
+.shadow-line {
+    border: 0.5px rgb(207, 207, 207) solid;
+}
+
+.shadow-line-1 {
+    border: 0.5px rgb(207, 207, 207) solid;
+    margin-top: 15px;
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+
+.show-checkout{
+    width:377px;
+    height:361px;
+    padding:8px 24px 55px 24px; 
+    border:1px rgb(235,235,235) solid;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    margin-left: 55px;
+}
+
+
+.checkout-top {
+    height: 83px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px rgb(235,235,235) solid;
+}
+
+.checkout-rate {
+    width: 105px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.span-rate {
+    font-size: 22px;
+    color: rgb(72,72,72);
+    font-weight: 800;
+}
+
+.span-per-night {
+    width: 52px;
+    padding-top: 7px;
+    padding-left: 2px;
+    font-size: 12px;
+    color: rgb(72,72,72);
+    font-weight: 600;
+}
+
+.checkout-review {
+    /* margin-bottom: 20px; */
+    color: rgb(0, 132, 137);
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.num-reviews {
+    padding-left: 5px; 
+    color: rgb(72,72,72);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.checkout-date {
+    margin-top: 18px;
+    height: 41px;
+}
+
+    .p-dates {
+        font-size: 12px;
+        color: rgb(72,72,72);
+        font-weight: 600;
+
+    }
+
+.checkout-guests {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px 0 15px 0;
+}
+
+.checkout-guests > label {
+    color: #484848;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.num-guests {
+    border: 1px rgb(72,72,72) solid;
+    height: 40px;
+    margin-bottom: 15px;
+    box-shadow: none;
+}
+
+.num-guests:focus {
+    border: none;
+    box-shadow: none;
+
+}
+
+
+.checkout-submit {
+    background-color: rgb(255, 90, 95);
+    color: white;
+    height: 47px;
+    width: 278px auto;   
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+
+.listing-props {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 400px;
+    line-height: 22px;
+    color: rgb(72,72,72);
+}
+
+.listing-things {
+    padding: 13px 0 13px 0;
+}
+
+.listing-things-top > span{
+    padding-left: 15px;
+
+}
+
+.listing-things-top {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(72,72,72);
+    line-height: 22px;
+}
+
+.listing-things-bottom {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(72,72,72);
+    line-height: 22px;
+}
+
+.listing-things-bottom > span {
+    padding-left: 30px;
+}
+
+
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+.all-reviews {
+    color: rgb(72,72,72);
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    margin: 27px 0 27px 0;
+}
+
+.review-top-div {
+    display: flex;
+    flex-direction: row;
+    width: 180px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.author-thumbnail {
+    width: 50px;
+    margin-right: 20px;
+
+}
+
+.author-thumbnail img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.author-first-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(72,72,72);
+    line-height: 22px;
+}
+
+.review-created-date {
+    font-size: 13px;
+    font-weight: 400px;
+    color: rgb(72,72,72);
+    line-height: 18px;
+}
+
+.review-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(72,72,72);
+    line-height: 22px;
+}
+
+
+.listing-average-review {
+    padding: 27px 0 27px 0;
+    display: flex;
+    width: 278px;
+    align-items: center;
+}
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 0 2px 20px;
+  position: relative;
+  
+  text-shadow: 0px 1px 0 #c9c9c9;
+
+  &-top {
+    color: rgb(1,132,137);
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    font-size: 20px;
+  }
+  &-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+    font-size: 20px;
+  }
+}
+
+
+
+/* TESTING */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */

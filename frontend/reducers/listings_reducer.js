@@ -6,10 +6,10 @@ const listingsReducer = (oldState = {}, action) => {
     switch(action.type){
         default:
             return oldState;
-        case RECEIVE_LISTINGS:
+        case RECEIVE_LISTINGS:  
             return action.listings;
         case RECEIVE_LISTING:
-            return merge({}, oldState, {[action.payload.listing.id]: action.payload.listing});
+            return merge({}, oldState, {[action.payload.listing.id]: action.payload});
         case REMOVE_LISTING:
             const newState = merge({}, oldState);
             delete(newState[action.listingId]);

@@ -1,22 +1,48 @@
 import {connect} from 'react-redux';
 import React from 'react'
-import {Link} from 'react-router-dom';
 import {logout} from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
+
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {dropped: false};
+        this.state = {
+            dropped: false,
+            firstSubmit: false
+        };
         this.dropDown = this.dropDown.bind(this) 
-        this.unDrop = this.unDrop.bind(this) 
+        this.unDrop = this.unDrop.bind(this);
+        this.geolocate = this.geolocate.bind(this);
+
+        // this.initAutocomplete();
     }
 
-    initAutocomplete() {
-        const map = document.getElementById('map');
-        const input = document.getElementById('pac-input');
-        const searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    handleChange(){
+        this.initAutocomplete();
+        console.log(this.autoComplete.getPlace());
+        // const input = document.getElementById('autocomplete');
+        console.log(this.autoComplete);
+        // window.map.setCenter(this.autoComplete.getPlace().geometry.location);
+        this.setState({ firstSubmit: false });
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        let place = this.autoComplete.getPlace();
+        if (place) {
+            while (!place.geometry) {
+                console.log(place);
+                place = this.autoComplete.getPlace();
+            }
+            // const input = document.getElementById('autocomplete');
+            window.map.setCenter(this.autoComplete.getPlace().geometry.location);
+    
+            if (this.autoComplete.getPlace() && this.autoComplete.getPlace().geometry) {
+                // const map = document.getElementById('map')
+            }
+        }
     }
 
 
@@ -28,8 +54,31 @@ class NavBar extends React.Component {
         this.setState({dropped: false})
     }
 
+    initAutocomplete() {
+        this.autoComplete = new google.maps.places.Autocomplete(
+            document.getElementById('autocomplete', { types: ['geocode'] }));
+    }
+
+    geolocate() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const autoComplete = new google.maps.places.Autocomplete(
+                    document.getElementById('autocomplete', { types: ['geocode'] }));
+                let geolocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                let circle = new google.maps.Circle(
+                    { center: geolocation, radius: position.coords.accuracy });
+                
+                autoComplete.setBounds(circle.getBounds());
+            });
+        }
+    }
+    
+
     render(){
-        
+
         if(!this.props.id){
             return (
                 <div className="nav" style={{backgroundColor:"transparent", borderBottom:"0px"}}>
@@ -53,10 +102,11 @@ class NavBar extends React.Component {
                 >
                     <div className="img-container" style={{paddingLeft:"20px"}}>
                         <img className="redLogo" src={window.redLogo} alt="" />
-                        <form className="search-field">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                            <input id="pac-input" type="text" placeholder="Try Bangkok" />
+                        <form className="search-field" onSubmit={(e) => this.handleSubmit(e)}>
+                            <button type="submit"><i className="fa fa-search"></i></button>
+                            <input id="autocomplete" type="text" onFocus={this.geolocate} onChange={this.handleChange.bind(this)} className="controls" placeholder="Try Venice, Los Angeles" />
                         </form>
+                        
                     </div>
                     { this.state.dropped ? (<div className="whole-screen" onClick={this.unDrop}></div>) : null }
                     <div className="logged-in-container">

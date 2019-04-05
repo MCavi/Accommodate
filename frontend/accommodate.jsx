@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.signup = userUtil.signup;
+    window.logout = userUtil.logout
     window.fetchListings = listingUtil.fetchListings
     window.fetchListing = listingUtil.fetchListing
     window.createListing = listingUtil.createListing

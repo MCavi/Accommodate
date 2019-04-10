@@ -281,6 +281,10 @@ button:focus {outline:0;}
 .pac-card {
         margin: 10px 10px 0 0;
         border-radius: 2px 0 0 2px;
+        position: absolute;
+
+        top: 0px;
+        left: 0px;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         outline: none;
@@ -289,9 +293,12 @@ button:focus {outline:0;}
         font-family: Roboto;
       }
 
-      #pac-container {
+      .pac-container {
         padding-bottom: 12px;
         margin-right: 12px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
       }
 
       .pac-controls {

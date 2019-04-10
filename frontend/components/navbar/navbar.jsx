@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import React from 'react'
 import {logout} from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 
 class NavBar extends React.Component {
@@ -78,7 +79,6 @@ class NavBar extends React.Component {
     
 
     render(){
-
         if(!this.props.id){
             return (
                 <div className="nav" style={{backgroundColor:"transparent", borderBottom:"0px"}}>
@@ -115,7 +115,7 @@ class NavBar extends React.Component {
                             <img className="profile-icon" src={window.defaultThumbnail} alt="" />
                             <div>
                                 <ul className={this.state.dropped ? "profile-drop-down" : "hidden"}>
-                                    <li className="dropdown-li" ><button className="dropdown-button"><p>Profile</p></button></li>
+                                    <li className="dropdown-li" ><button className="dropdown-button" onClick={() => this.props.history.push(`/users/${this.props.id}`)}><p>Profile</p></button></li>
                                     <li className="dropdown-li" onClick={this.props.logout} ><button className="dropdown-button"><p>Log Out</p></button></li>
                                 </ul>
                             </div>
@@ -139,4 +139,4 @@ const mdp = dispatch => ({
     openModal: modal => dispatch(openModal(modal))
 });
 
-export default connect(msp, mdp)(NavBar)
+export default withRouter(connect(msp, mdp)(NavBar));

@@ -1,25 +1,25 @@
 import React from 'react'
 import NavBar from '../navbar/navbar';
 import ReviewItem from '../reviews/review_item';
-import DayPicker from './calendar';
+import BookingContainer from './booking_container';
 
 
 
 class ListingShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.listing.listing
+        // this.state = this.props.listing.listing
     }
+
     componentDidMount(){
         this.props.fetchListing(this.props.match.params.listingId)
-
     }
 
-    // componentDidUpdate(prevProps) {
-        // if(prevProps.listing.id != this.props.match.params.listingId) {
-        //     this.props.fetchListing(this.props.match.params.listingId)
-        // }
-    // }
+    componentDidUpdate(prevProps) {
+        if(prevProps.listingId != this.props.match.params.listingId) {
+            this.props.fetchListing(this.props.match.params.listingId)
+        }
+    }
  
     
 
@@ -134,56 +134,7 @@ class ListingShow extends React.Component {
 
                         </div>
 
-
-
-                        <div className="show-checkout">
-                            <div className="checkout-top">
-                                <div className="checkout-rate">
-                                    <span className="span-rate">${this.props.listing.listing.rate}</span>
-                                    <span className="span-per-night">per night</span>
-                                </div>
-                                <div className="checkout-review">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <span className="num-reviews">{numRating}</span>
-                                </div>
-
-                            </div>
-
-                            <div className="checkout-date">
-                                <p className="p-dates">Dates</p>
-                                <DayPicker />
-                            </div>
-
-                            <div className="checkout-guests">
-                                <label>Guests</label>
-                                <select className="num-guests">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                            </div>
-
-                            
-
-                            {/* 
-                            <SingleDatePicker
-                                id="date_input"
-                                date={this.state.date}
-                                focused={this.state.focused}
-                                onDateChange={(date) => { this.setState({ date }); }}
-                                onFocusChange={({ focused }) => { this.setState({ focused }); }}
-                            /> */}
-
-                            <button className="checkout-submit">Book</button>
-
-                        </div>
+                        <BookingContainer listing={this.props.listing.listing} />
 
 
                     </div>

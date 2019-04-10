@@ -12,7 +12,7 @@ class ReviewsContoller < ApplicationController
     end 
 
     def index
-        @reviews = Review.All
+        @reviews = Review.all
         render :index
     end 
 

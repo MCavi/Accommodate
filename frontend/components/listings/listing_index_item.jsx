@@ -3,16 +3,15 @@ import React from 'react';
 class ListingIndexItem extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.listing
+        this.state = this.props.listing || {}
     }
 
     render(){
-        
+
         const pics = ['grid-item-image-container1', 'grid-item-image-container2', 'grid-item-image-container3', 'grid-item-image-container4', 'grid-item-image-container5']
         const random = Math.floor(Math.random() * 4)
         const pic = pics[random];
         
-        // debugger
         return(
             <>
 

@@ -9,7 +9,6 @@ export const createBooking = booking => dispatch => (
 );
 
 export const fetchBookings = () => dispatch => {
-    debugger
     return BookingApiUtil.fetchBookings().then(bookings => dispatch(receiveAllBookings(bookings)))
 };
 
@@ -18,7 +17,6 @@ export const fetchBooking = bookingId => dispatch => (
 );
 
 const receiveAllBookings = bookings => {
-    debugger
     return {
     type: RECEIVE_ALL_BOOKINGS,
     bookings

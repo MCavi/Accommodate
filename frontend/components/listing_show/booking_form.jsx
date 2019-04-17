@@ -29,7 +29,6 @@ class BookingForm extends React.Component {
 
     onClic(e){
         e.preventDefault()
-        debugger
         const booking = {
             start_date: this.state.startDate.format('YYYY-MM-DD HH:mm:00'),
             end_date: this.state.endDate.format('YYYY-MM-DD HH:mm:00'),
@@ -49,7 +48,6 @@ class BookingForm extends React.Component {
         let listingReviews;
         let ratingTotal = 0;
         let numRating = 0;
-        debugger
         return (
             <div>
                 <div className="show-checkout">

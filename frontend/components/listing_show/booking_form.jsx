@@ -21,6 +21,7 @@ class BookingForm extends React.Component {
 
     onChange(e){
         this.setState({ [e.target.name]: e.target.value });
+
     }
 
     renderErrors(errors) {
@@ -29,6 +30,7 @@ class BookingForm extends React.Component {
 
     onClic(e){
         e.preventDefault()
+
         const booking = {
             start_date: this.state.startDate.format('YYYY-MM-DD HH:mm:00'),
             end_date: this.state.endDate.format('YYYY-MM-DD HH:mm:00'),
@@ -48,6 +50,41 @@ class BookingForm extends React.Component {
         let listingReviews;
         let ratingTotal = 0;
         let numRating = 0;
+        let numOfNights;
+        let totalCostOfRental;
+        let subTotal;
+
+        
+        if ( this.state.endDate ) {
+            const dayInMilliseconds = 1000 * 60 * 60 * 24;
+            numOfNights = Math.ceil((this.state.endDate - this.state.startDate) / dayInMilliseconds);
+            totalCostOfRental = this.props.listing.rate * numOfNights + 60 + 75
+            subTotal = 
+                <div className="booking-total" >
+
+                    <div className="total-nights">
+                        <p>{`$ ${this.props.listing.rate} x ${numOfNights} nights`}</p>
+                        <p>{`$ ${this.props.listing.rate * numOfNights}`}</p>
+                    </div>
+
+                    <div className="cleaning-fee">
+                        <p>Cleaning fee</p>
+                        <p>$60</p>
+                    </div>
+
+                    <div className="service-fee">
+                        <p>Service fee</p>
+                        <p>$75</p>
+                    </div>
+
+                    <div className="booking-total-sum">
+                        <p>Total</p>
+                        <p>{totalCostOfRental}</p>
+                    </div>
+
+                </div>
+        }
+
         return (
             <div>
                 <div className="show-checkout">
@@ -70,19 +107,19 @@ class BookingForm extends React.Component {
                     <div className="checkout-date">
                         <p className="p-dates">Dates</p>
                         <DateRangePicker
-                            startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                            startDateId="StartDateId" // PropTypes.string.isRequired,
-                            endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                            endDateId="endDateId" // PropTypes.string.isRequired,
-                            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                            focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                            onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                            startDate={this.state.startDate}
+                            startDateId="StartDateId"
+                            endDate={this.state.endDate}
+                            endDateId="endDateId"
+                            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                            focusedInput={this.state.focusedInput}
+                            onFocusChange={focusedInput => this.setState({ focusedInput })}
                         />
                     </div>
 
                     <div className="checkout-guests">
                         <label>Guests</label>
-                        <select className="num-guests" name="numGuests" onChange={this.onChange}>
+                        <select className="num-guests" name="numGuests" onChange={this.onChange} style={{'cursor': "pointer"}}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -91,6 +128,8 @@ class BookingForm extends React.Component {
                             <option value="6">6</option>
                         </select>
                     </div>
+
+                   {subTotal}
 
                     <button className="checkout-submit" onClick={this.onClic}>Book</button>
 

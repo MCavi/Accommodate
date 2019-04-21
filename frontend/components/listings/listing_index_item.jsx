@@ -11,7 +11,7 @@ class ListingIndexItem extends React.Component {
         const pics = ['grid-item-image-container1', 'grid-item-image-container2', 'grid-item-image-container3', 'grid-item-image-container4', 'grid-item-image-container5']
         const random = Math.floor(Math.random() * 4)
         const pic = pics[random];
-        
+        debugger
         return(
             <>
 

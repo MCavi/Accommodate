@@ -50,6 +50,7 @@ class ListingIndex extends React.Component {
 
     render(){
         const listingItems = this.props.listings.map(listing => {
+            debugger
             const markerOptions = {
                 position: new google.maps.LatLng(listing.lat, listing.long),
                 map: this.map

@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../navbar/navbar';
 import ReviewItem from '../reviews/review_item';
-import BookingContainer from './booking_container';
+import BookingContainer from '../booking/booking_container';
 
 
 

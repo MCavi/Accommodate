@@ -62,24 +62,24 @@ class BookingForm extends React.Component {
             subTotal = 
                 <div className="booking-total" >
 
-                    <div className="total-nights">
-                        <p>{`$ ${this.props.listing.rate} x ${numOfNights} nights`}</p>
-                        <p>{`$ ${this.props.listing.rate * numOfNights}`}</p>
+                    <div>
+                        <p>{`$${this.props.listing.rate} x ${numOfNights} nights`}</p>
+                        <p>{`$${this.props.listing.rate * numOfNights}`}</p>
                     </div>
 
-                    <div className="cleaning-fee">
+                    <div>
                         <p>Cleaning fee</p>
                         <p>$60</p>
                     </div>
 
-                    <div className="service-fee">
+                    <div>
                         <p>Service fee</p>
                         <p>$75</p>
                     </div>
 
-                    <div className="booking-total-sum">
+                    <div className="total-booking-cost">
                         <p>Total</p>
-                        <p>{totalCostOfRental}</p>
+                        <p>${totalCostOfRental}</p>
                     </div>
 
                 </div>

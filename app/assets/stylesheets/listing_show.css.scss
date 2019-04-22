@@ -232,11 +232,35 @@
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
+.booking-total {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-total div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(235,235,235);
+    color: #484848;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.total-booking-cost p{
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+
+
 
 .show-checkout{
     width:377px;
-    height:361px;
-    padding:8px 24px 55px 24px; 
+    height:fit-content;
+    padding:0 24px 30px 24px; 
     border:1px rgb(235,235,235) solid;
     display: flex;
     flex-direction: column;

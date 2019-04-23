@@ -30,7 +30,6 @@ class BookingForm extends React.Component {
     }
 
     handleClick(e){
-        debugger
         e.preventDefault();
         const booking = {
             start_date: this.state.startDate.format('YYYY-MM-DD HH:mm:00'),

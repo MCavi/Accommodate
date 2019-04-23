@@ -1,18 +1,16 @@
-class ReviewsContoller < ApplicationController
+class Api::ReviewsController < ApplicationController
 
     # before_action :require_loggin only :create
 
     def create 
         @review = Review.new(review_params)
         @review.author_id = current_user.id
-        @review.listing_id = params[:listing_id]
         @review.save
-        flash[:errors] = review.errors.full_messages
-        # render :index
+        flash[:errors] = @review.errors.full_messages
     end 
 
     def index
-        @reviews = Review.all
+        @reviews = Review.where(listing_id: params[:listingId]).includes(:author)
         render :index
     end 
 

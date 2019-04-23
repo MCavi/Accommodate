@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
 
     handleChangeModal(){
         this.props.closeModal();
-        debugger
         this.props.openModal(this.props.otherForm);
     }
 

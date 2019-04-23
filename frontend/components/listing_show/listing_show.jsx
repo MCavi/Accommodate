@@ -2,21 +2,33 @@ import React from 'react'
 import NavBar from '../navbar/navbar';
 import ReviewItem from '../reviews/review_item';
 import BookingContainer from '../booking/booking_container';
-import ConfirmationModal from '../booking/confirmation_modal';
-
-
 
 class ListingShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            dropped: false
+            rating: 5,
+            body: "",
+            listing_id: this.props.match.params.listingId 
         }
-        // this.state = this.props.listing.listing
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange(field) {
+        return e => {
+            this.setState({[field]: e.target.value});
+        };
+    };
+
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.createReview(this.state);
+    };
 
     componentDidMount(){
         this.props.fetchListing(this.props.match.params.listingId)
+        this.props.fetchReviews(73);
     }
 
     componentDidUpdate(prevProps) {
@@ -31,11 +43,10 @@ class ListingShow extends React.Component {
         let ratingTotal = 0;
         let numRating = 0;
         
+        
         // LOL 
-        if (listing.listing) {
-
-            listingReviews = listing.listing.reviewIds.map((reviewId) => {
-                const review = listing.reviews[reviewId];
+        if (this.props.listing.listing && this.props.reviews) {
+            listingReviews = this.props.reviews.map((review) => {
                 numRating += 1
                 ratingTotal += review.rating
                 return (
@@ -140,6 +151,22 @@ class ListingShow extends React.Component {
 
 
                     </div>
+
+ 
+                    <form onSubmit={this.handleSubmit} >
+                        <label htmlFor="">Rating</label>
+                        <select name="rating" id="" onChange={this.handleChange("rating")}>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
+                        <input type="submit"/>
+                    </form>
+
+        
 
                 </>
             );

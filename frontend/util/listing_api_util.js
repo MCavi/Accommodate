@@ -15,12 +15,14 @@ export const fetchListing = listingId => (
     })
 )
 
-export const createReview = review => {
+export const createReview = (review) => {
+    debugger
     return(
         $.ajax({
             method: "POST",
             url: `/api/reviews`,
-            data: {review}
+            data: { review },
+            error: (error) => console.log(error)
         })
     )
 }
@@ -47,4 +49,12 @@ export const deleteListing = listingId => (
         method: "DELETE",
         url: `/api/listings/${listingId}`
     })
-)
+);
+
+export const fetchReviews = (listingId) => (
+    $.ajax({
+        method: "GET",
+        url: `/api/reviews`,
+        data: { listingId }
+    })
+);

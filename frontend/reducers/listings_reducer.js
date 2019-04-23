@@ -1,5 +1,5 @@
 import {merge} from 'lodash';
-import { RECEIVE_LISTINGS, RECEIVE_LISTING, REMOVE_LISTING} from '../actions/listings_actions';
+import { RECEIVE_LISTINGS, RECEIVE_LISTING, REMOVE_LISTING, RECEIVE_REVIEW} from '../actions/listings_actions';
 
 const listingsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);

@@ -10,7 +10,6 @@ const reviewsReducer = (oldState = {}, action) => {
         default:
             return oldState;
         case RECEIVE_REVIEWS:
-        debugger
             return action.reviews;
         case RECEIVE_REVIEW:
             return merge({}, oldState, { [action.review.id]: action.review });

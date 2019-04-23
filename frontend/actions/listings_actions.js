@@ -28,7 +28,6 @@ export const removeListing = listingId => ({
 })
 
 export const receiveReview = review => {
-    debugger
     return {
         type: RECEIVE_REVIEW, 
         review
@@ -36,7 +35,6 @@ export const receiveReview = review => {
 }
 
 export const receiveReviews = reviews => {
-    debugger
     return {
         type: RECEIVE_REVIEWS,
         reviews
@@ -64,8 +62,7 @@ export const deleteListing = (listingId) => dispatch => {
 };
 
 export const createReview = (review) => dispatch => {
-    debugger
-    return ListingApiUtil.createReview(review).then(review => dispatch(receiveReview(review)));
+    return ListingApiUtil.createReview(review).then((review) => dispatch(receiveReview(review)));
 };
 
 export const fetchReviews = (listingId) => dispatch => {

@@ -16,7 +16,6 @@ export const fetchListing = listingId => (
 )
 
 export const createReview = (review) => {
-    debugger
     return(
         $.ajax({
             method: "POST",
@@ -28,10 +27,11 @@ export const createReview = (review) => {
 }
 
 export const createListing = listing => (
-    $.ajax({method: "POST",
-    url: `/api/listings`,
-    data: {listing},
-    error: (error) => console.log(error)
+    $.ajax({
+        method: "POST",
+        url: `/api/listings`,
+        data: {listing},
+        error: (error) => console.log(error)
     })
 )
 

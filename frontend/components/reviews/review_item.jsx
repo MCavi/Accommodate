@@ -10,7 +10,7 @@ class ReviewItem extends React.Component {
 
     render() {
         
-
+        debugger
         const month = this.months[Number(this.state.created_at.slice(5, 7)) - 1]
         const year = Number(this.state.created_at.slice(0, 4))
 

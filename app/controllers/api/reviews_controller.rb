@@ -6,6 +6,7 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.author_id = current_user.id
         @review.save
+        render :show
         flash[:errors] = @review.errors.full_messages
     end 
 

@@ -20,13 +20,14 @@ function Modal({ modal, closeModal }) {
             break;
         case "bookingConfirmation":
             component = <ConfirmationModal />
+            break;
         default:
             return null;
     }
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
-                {component}
+                <ConfirmationModal />
             </div>
         </div>
     );

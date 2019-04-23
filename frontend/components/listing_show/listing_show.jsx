@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../navbar/navbar';
 import ReviewItem from '../reviews/review_item';
 import BookingContainer from '../booking/booking_container';
+import Modal from '../../components/modal/modal';
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -57,6 +58,7 @@ class ListingShow extends React.Component {
         if (this.props.listing.listing) {
             return (
                 <>
+                    <Modal />
                     <NavBar />
                     <div className="show-pictures">
                         <div className="pic-1">

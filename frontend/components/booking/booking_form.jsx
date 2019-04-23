@@ -9,10 +9,9 @@ class BookingForm extends React.Component {
     constructor(props) {
         
         super(props);
-        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null };
+        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null, modal: false };
         this.handleClick = this.handleClick.bind(this);
         this.onChange = this.onChange.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this)
     }
 
@@ -25,10 +24,6 @@ class BookingForm extends React.Component {
 
     }
 
-    renderErrors(errors) {
-
-    }
-
     handleClick(e){
         e.preventDefault();
         const booking = {
@@ -38,6 +33,7 @@ class BookingForm extends React.Component {
             listing_id: this.props.listing.id
         };
         
+        this.state.modal = true;
         this.props.openModal("bookingConfirmation");
         const conModal = document.getElementsByClassName("confirm-button")[0];
         const that = this;
@@ -45,10 +41,8 @@ class BookingForm extends React.Component {
             that.props.createBooking(booking)
                 .then(() => that.props.history.push('/index'), 
                     () => that.renderErrors());   
-        })
-        
-
-    }
+        });
+    };
 
     handleCloseModal(){
         this.state.modal = false;

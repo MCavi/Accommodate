@@ -6,17 +6,15 @@ import React from 'react';
 
 const msp = state => ({
     errors: state.errors.session,
-    formType: 'Signup'
+    formType: 'Signup',
+    otherForm: "Login"
+
 })
 
 const mdp = disaptch => ({
     demoLogin: (user) => dispatch(login(user)),
     actionForm: (user) => dispatch(signup(user)),
-    otherForm: (
-        <button onClick={() => dispatch(openModal('login'))}>
-            Login
-      </button>
-    ),
+    openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal())
 })
 

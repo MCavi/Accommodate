@@ -2,12 +2,16 @@ import React from 'react'
 import NavBar from '../navbar/navbar';
 import ReviewItem from '../reviews/review_item';
 import BookingContainer from '../booking/booking_container';
+import ConfirmationModal from '../booking/confirmation_modal';
 
 
 
 class ListingShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            dropped: false
+        }
         // this.state = this.props.listing.listing
     }
 
@@ -20,8 +24,6 @@ class ListingShow extends React.Component {
             this.props.fetchListing(this.props.match.params.listingId)
         }
     }
- 
-    
 
     render(){
         const {listing, reviews} = this.props;
@@ -138,8 +140,6 @@ class ListingShow extends React.Component {
 
 
                     </div>
-
-             
 
                 </>
             );

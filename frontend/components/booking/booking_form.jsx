@@ -9,10 +9,11 @@ class BookingForm extends React.Component {
     constructor(props) {
         
         super(props);
-        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null };
-        this.onClic = this.onClic.bind(this);
+        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null, modal: false };
+        this.handleClick = this.handleClick.bind(this);
         this.onChange = this.onChange.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this)
     }
 
     onFocusChange(focusedInput) {
@@ -28,21 +29,40 @@ class BookingForm extends React.Component {
 
     }
 
-    onClic(e){
-        e.preventDefault()
-
+    handleClick(e){
+        debugger
+        e.preventDefault();
         const booking = {
             start_date: this.state.startDate.format('YYYY-MM-DD HH:mm:00'),
             end_date: this.state.endDate.format('YYYY-MM-DD HH:mm:00'),
             num_guests: this.state.numGuests,
             listing_id: this.props.listing.id
-        }
+        };
+        
+        this.props.openModal("bookingConfirmation");
+        const conModal = document.getElementsByClassName("confirm-button")[0];
+        const that = this;
+        conModal.addEventListener('click', () => {
+            that.props.createBooking(booking)
+                .then(() => that.props.history.push('/index'), 
+                    () => that.renderErrors());   
+        })
         
 
+    }
+
+    handleCloseModal(){
+        this.state.modal = false;
+    }
+
+    handleConfirmBooking(){
         this.props.createBooking(booking)
-            .then(() => this.props.history.push('/index'), 
-                () => this.renderErrors());
-        
+            .then(() => this.props.history.push('/index'));
+        this.handleCloseModal();
+    }
+
+    handleOpenModal(){
+        this.state.modal = true;
     }
 
     render() {
@@ -53,6 +73,7 @@ class BookingForm extends React.Component {
         let numOfNights;
         let totalCostOfRental;
         let subTotal;
+        let confirmationModal;
 
         
         if ( this.state.endDate ) {
@@ -88,11 +109,14 @@ class BookingForm extends React.Component {
         return (
             <div>
                 <div className="show-checkout">
+
                     <div className="checkout-top">
+
                         <div className="checkout-rate">
                             <span className="span-rate">${this.props.listing.rate}</span>
                             <span className="span-per-night">per night</span>
                         </div>
+
                         <div className="checkout-review">
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
@@ -131,15 +155,10 @@ class BookingForm extends React.Component {
 
                    {subTotal}
 
-                    <button className="checkout-submit" onClick={this.onClic}>Book</button>
-
+                    <button className="checkout-submit" onClick={this.handleClick}>Book</button>
 
                 </div>
-                
-                
-
-
-
+        
             </div>
         )
     };

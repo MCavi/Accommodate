@@ -8,7 +8,14 @@ class SessionForm extends React.Component {
         this.state = {email: "", password: "", first_name: "", last_name: ""};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
+        this.handleChangeModal = this.handleChangeModal.bind(this);
     };
+
+    handleChangeModal(){
+        this.props.closeModal();
+        debugger
+        this.props.openModal(this.props.otherForm);
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -51,7 +58,7 @@ class SessionForm extends React.Component {
                     </div>
 
                     <div className="login-form-input">
-                        <p>Don't Have an Account? <Link to={'/signup'}>Sign Up</Link></p> 
+                        <div>Don't Have an Account? <p onClick={this.handleChangeModal} >Sign Up</p> </div> 
                     </div>
                     
                 </form>
@@ -78,7 +85,7 @@ class SessionForm extends React.Component {
                         <input type="submit" value="Sign Up" />
                     </div>
                     <div className="login-form-input">
-                        <p>Already have an Accommodate account?<Link to={'/login'}>Log in</Link></p>
+                        <div>Already have an Accommodate account? <p onClick={this.handleChangeModal}>Log In</p></div>
                     </div>
                 </form>
             )

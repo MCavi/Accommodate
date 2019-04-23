@@ -145,6 +145,19 @@ class ListingShow extends React.Component {
 
                             <div className="shadow-line"></div>
 
+                            <form onSubmit={this.handleSubmit} >
+                                <label htmlFor="">Rating</label>
+                                <select name="rating" id="" onChange={this.handleChange("rating")}>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
+                                <input type="submit" />
+                            </form>
+
                         </div>
 
                         <BookingContainer listing={this.props.listing.listing} />
@@ -153,18 +166,7 @@ class ListingShow extends React.Component {
                     </div>
 
  
-                    <form onSubmit={this.handleSubmit} >
-                        <label htmlFor="">Rating</label>
-                        <select name="rating" id="" onChange={this.handleChange("rating")}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
-                        <input type="submit"/>
-                    </form>
+                   
 
         
 

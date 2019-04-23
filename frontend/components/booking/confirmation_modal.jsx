@@ -9,7 +9,6 @@ class ConfirmationModal extends React.Component {
 
     handleDeny(){
         this.props.closeModal();
-
     }
 
 

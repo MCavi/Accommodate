@@ -9,7 +9,7 @@ class BookingForm extends React.Component {
     constructor(props) {
         
         super(props);
-        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null, modal: false };
+        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null };
         this.handleClick = this.handleClick.bind(this);
         this.onChange = this.onChange.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
@@ -58,10 +58,6 @@ class BookingForm extends React.Component {
         this.props.createBooking(booking)
             .then(() => this.props.history.push('/index'));
         this.handleCloseModal();
-    }
-
-    handleOpenModal(){
-        this.state.modal = true;
     }
 
     render() {
@@ -153,7 +149,7 @@ class BookingForm extends React.Component {
                     </div>
 
                    {subTotal}
-
+                   
                     <button className="checkout-submit" onClick={this.handleClick}>Book</button>
 
                 </div>

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createBooking } from '../../actions/bookings_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import ConfirmationModal from './confirmation_modal';
+import BookingForm from './booking_form';
 // const msp = (state, ownProps) => {
     
 //     return {
@@ -15,4 +15,4 @@ const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal())
 })
 
-export default withRouter(connect(null, mdp)(ConfirmationModal));
+export default withRouter(connect(null, mdp)(BookingForm));

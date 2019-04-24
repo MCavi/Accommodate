@@ -1,4 +1,5 @@
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import React from 'react'
 import {logout} from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
@@ -15,17 +16,13 @@ class NavBar extends React.Component {
         this.dropDown = this.dropDown.bind(this) 
         this.unDrop = this.unDrop.bind(this);
         this.geolocate = this.geolocate.bind(this);
-
-        // this.initAutocomplete();
     }
 
 
     handleChange(){
         this.initAutocomplete();
         console.log(this.autoComplete.getPlace());
-        // const input = document.getElementById('autocomplete');
         console.log(this.autoComplete);
-        // window.map.setCenter(this.autoComplete.getPlace().geometry.location);
         this.setState({ firstSubmit: false });
     }
 
@@ -37,11 +34,8 @@ class NavBar extends React.Component {
                 console.log(place);
                 place = this.autoComplete.getPlace();
             }
-            // const input = document.getElementById('autocomplete');
             window.map.setCenter(this.autoComplete.getPlace().geometry.location);
-    
             if (this.autoComplete.getPlace() && this.autoComplete.getPlace().geometry) {
-                // const map = document.getElementById('map')
             }
         }
     }
@@ -101,7 +95,9 @@ class NavBar extends React.Component {
                     style={{borderBottom: '1px rgb(228, 228, 228) solid'}}
                 >
                     <div className="img-container" style={{paddingLeft:"20px"}}>
-                        <img className="redLogo" src={window.redLogo} alt="" />
+                        <Link to={'/index'}> 
+                            <img className="redLogo" src={window.redLogo} />
+                        </Link>
                         <form className="search-field" onSubmit={(e) => this.handleSubmit(e)}>
                             <button type="submit"><i className="fa fa-search"></i></button>
                             <input id="autocomplete" type="text" onFocus={this.geolocate} onChange={this.handleChange.bind(this)} className="controls" placeholder="Try Venice, Los Angeles" />

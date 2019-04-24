@@ -12,7 +12,7 @@ class ListingIndexItem extends React.Component {
         const random = Math.floor(Math.random() * 4)
         const pic = pics[random];
 
-        if (!this.state) {
+        if (!this.state.title) {
             return <div></div>
         }
 

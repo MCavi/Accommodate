@@ -15,12 +15,6 @@ class Api::ReviewsController < ApplicationController
         render :index
     end 
 
-    # def destroy 
-    #     review = Review.find(params[:id])
-    #     review.destroy
-    #     render 
-    # end
-
     private
     def review_params
         params.require(:review).permit(:listing_id, :body, :rating)

@@ -2,8 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
-// import '../../../app/assets/stylesheets/_react_dates_override.css';
-// import 'react-dates/lib/css/_datepicker.css';
 
 class BookingForm extends React.Component {
     constructor(props) {

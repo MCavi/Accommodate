@@ -10,7 +10,7 @@ const msp = ({entities}, ownProps) => ({
 })
 
 const mdp = dispatch => ({
-    closeModal: () => dispatch(closeModal()),
+    closeModal: () => dispatch(closeModal())
 })
 
 export default withRouter(connect(msp, mdp)(ConfirmationModal));

@@ -11,7 +11,7 @@ const msp = state => ({
 
 })
 
-const mdp = disaptch => ({
+const mdp = dispatch => ({
     demoLogin: (user) => dispatch(login(user)),
     actionForm: (user) => dispatch(signup(user)),
     openModal: modal => dispatch(openModal(modal)),

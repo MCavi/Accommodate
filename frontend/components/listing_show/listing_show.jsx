@@ -25,7 +25,13 @@ class ListingShow extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createReview(this.state);
+        this.props.createReview(this.state).then( () => {
+            this.setState({
+                rating: 5,
+                body: ""
+            })
+        })
+
     };
 
     componentDidMount(){
@@ -171,7 +177,7 @@ class ListingShow extends React.Component {
                                     </div>
                                 </div>
 
-                                <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
+                                <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="50" rows="5"></textarea>
                                 <input type="submit" />
                             </form>
 

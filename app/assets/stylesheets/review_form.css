@@ -7,9 +7,23 @@
     height: 6%;
 }
 
+
+.review-form-title {
+    font-size: 24px;
+}
+
 .review-form input {
     width: 35%;
     background-color: #018489;
     color: white;
-    
+    font-size: 20px;
+    border-radius: 7px;
+}
+
+.review-form input:focus {
+    outline: none;
+}
+
+.rating {
+    padding-right: 20px;
 }

@@ -10,14 +10,13 @@ class ConfirmationModal extends React.Component {
 
     handleDeny(){
         this.props.closeModal();
-    }
+    };
 
     handleConfirm(){
         this.props.closeModal();
         this.props.createBooking(this.props.booking)
-            .then(() => this.props.history.push('/index'),
-                () => this.renderErrors());
-    }
+            .then(() => this.props.history.push('/index'))
+    };
 
 
     render(){

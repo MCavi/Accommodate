@@ -92,8 +92,6 @@ class ListingShow extends React.Component {
                         </div>
                     </div>
 
-
-
                     <div className="show">
                         <div className="show-info">
                             <div className="show-title" style={{ fontSize: "32", fontWeight: "600" }}>
@@ -184,13 +182,7 @@ class ListingShow extends React.Component {
 
                         <BookingContainer listing={this.props.listing.listing} modal={this.props.ui.modal} />
 
-
                     </div>
-
- 
-                   
-
-        
 
                 </>
             );

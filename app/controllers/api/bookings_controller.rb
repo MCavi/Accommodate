@@ -13,16 +13,6 @@ class Api::BookingsController < ApplicationController
         render :index
     end 
 
-    # def show
-    # end 
-
-    # def update
-    # end 
-
-    # def destroy
-    # end 
-
-
     private
     def booking_params
         params.require(:booking).permit(:listing_id, :start_date, :end_date, :num_guests)

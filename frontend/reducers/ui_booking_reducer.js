@@ -8,6 +8,5 @@ export default function modalReducer(state = null, action) {
             return action.booking;
         case CLOSE_MODAL:
             return null;
-
     }
 }

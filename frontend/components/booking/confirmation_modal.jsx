@@ -14,7 +14,6 @@ class ConfirmationModal extends React.Component {
 
     handleConfirm(){
         this.props.closeModal()
-        debugger
         this.props.createBooking(this.props.booking)
             .then(() => this.props.history.push('/index'))
     };

@@ -1,0 +1,11 @@
+.rating {
+    display: flex;
+
+}
+
+.rating div {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 22px;
+    color: #484844;
+}

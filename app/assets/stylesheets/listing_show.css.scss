@@ -10,17 +10,6 @@
     cursor: pointer;
 }
 
-/* .show-pictures:hover{
-    filter: brightness(73%);
-}
-
-.show-pictures:hover .pic-1 {
-    filter: brightness(73%);
-    filter: brightness(100%) !important;
-} */
-
-
-
 .show-pictures > div > img {
     width: 100%;
     height: 100%;
@@ -506,14 +495,3 @@
 
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
-// Confirmation Modal
-
-.confirmation-modal {
-    // display: flex;
-    position: relative;
-    top: 0px;
-    left: 0;
-    height: 300px;
-    width: 300px;
-    background-color:lightgreen;
-}

@@ -7,10 +7,10 @@ import { closeModal } from '../../actions/modal_actions';
 const msp = ({entities}, ownProps) => ({  
     listing: entities.listings[ownProps.match.params.listingId],
     bookings: entities.bookings
-})
+});
 
 const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal())
-})
+});
 
 export default withRouter(connect(msp, mdp)(ConfirmationModal));

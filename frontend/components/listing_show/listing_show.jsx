@@ -29,7 +29,7 @@ class ListingShow extends React.Component {
 
     componentDidMount(){
         this.props.fetchListing(this.props.match.params.listingId)
-        this.props.fetchReviews(73);
+        this.props.fetchReviews(this.props.match.params.listingId);
     }
 
     componentDidUpdate(prevProps) {
@@ -58,7 +58,6 @@ class ListingShow extends React.Component {
         if (this.props.listing.listing) {
             return (
                 <>
-                    <Modal />
                     <NavBar />
                     <div className="show-pictures">
                         <div className="pic-1">
@@ -150,6 +149,7 @@ class ListingShow extends React.Component {
                             <form onSubmit={this.handleSubmit} >
 
                             <div className="rating">
+                                <div className="review-form-label"></div>
                                 <form onChange={this.handleChange("rating")}>
                                     <input type="radio" id="rating-5" name="rating" value="1" checked="checked" />
                                     <input type="radio" id="rating-4" name="rating" value="2" />

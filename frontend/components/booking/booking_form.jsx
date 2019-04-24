@@ -32,10 +32,12 @@ class BookingForm extends React.Component {
         };
         
         this.state.modal = true;
-        this.props.openModal("bookingConfirmation");
+        this.props.openModal("bookingConfirmation")
         const conModal = document.getElementsByClassName("confirm-button")[0];
         const that = this;
+        debugger
         conModal.addEventListener('click', () => {
+            debugger
             that.props.createBooking(booking)
                 .then(() => that.props.history.push('/index'), 
                     () => that.renderErrors());   

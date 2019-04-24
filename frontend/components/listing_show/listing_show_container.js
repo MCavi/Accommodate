@@ -8,7 +8,8 @@ const msp = (state, ownProps) => {
         {
         listing: state.entities.listings[ownProps.match.params.listingId] || {}, 
         listingId: ownProps.match.params.listingId,
-        reviews
+        reviews,
+        ui: state.ui
         }
     )
 };

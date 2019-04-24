@@ -14,6 +14,7 @@ class ListingShow extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.changeRating = this.changeRating.bind(this);
     }
 
     handleChange(field) {
@@ -36,6 +37,11 @@ class ListingShow extends React.Component {
         if(prevProps.listingId != this.props.match.params.listingId) {
             this.props.fetchListing(this.props.match.params.listingId)
         }
+    }
+
+    changeRating(e){
+        debugger
+        this.setState({ rating: parseInt(e.target.title)})
     }
 
     render(){
@@ -149,14 +155,16 @@ class ListingShow extends React.Component {
                             <form onSubmit={this.handleSubmit} >
 
                             <div className="rating">
-                                <div className="review-form-label"></div>
-                                <form onChange={this.handleChange("rating")}>
-                                    <input type="radio" id="rating-5" name="rating" value="1" checked="checked" />
-                                    <input type="radio" id="rating-4" name="rating" value="2" />
-                                    <input type="radio" id="rating-3" name="rating" value="3" />
-                                    <input type="radio" id="rating-2" name="rating" value="4" />
-                                    <input type="radio" id="rating-1" name="rating" value="5" />
-                                </form>
+                                <div className="review-ratings-css">
+                                        <div className="review-ratings-css-top" style={{ 'width': `${this.state.rating / 5 * 100}%` }}><span title="1" onClick={this.changeRating}>★</span><span title="2" onClick={this.changeRating}>★</span><span title="3" onClick={this.changeRating}>★</span><span title="4" onClick={this.changeRating}>★</span><span title="5" onClick={this.changeRating}>★</span></div>
+                                    <div className="review-ratings-css-bottom">
+                                        <span onClikc={this.handleChange} title="1" >★</span>
+                                        <span onClikc={this.handleChange} title="2" >★</span>
+                                        <span onClikc={this.handleChange} title="3" >★</span>
+                                        <span onClikc={this.handleChange} title="4" >★</span>
+                                        <span onClikc={this.handleChange} title="5" >★</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
@@ -165,7 +173,7 @@ class ListingShow extends React.Component {
 
                         </div>
 
-                        <BookingContainer listing={this.props.listing.listing} />
+                        <BookingContainer listing={this.props.listing.listing} modal={this.props.ui.modal} />
 
 
                     </div>

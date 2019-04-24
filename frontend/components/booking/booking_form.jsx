@@ -7,7 +7,7 @@ class BookingForm extends React.Component {
     constructor(props) {
         
         super(props);
-        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null, modal: false };
+        this.state = { startDate: moment(), endDate: null, numGuests: 1, focusedInput: null };
         this.handleClick = this.handleClick.bind(this);
         this.onChange = this.onChange.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this)
@@ -31,17 +31,16 @@ class BookingForm extends React.Component {
             listing_id: this.props.listing.id
         };
         
-        this.state.modal = true;
         this.props.openModal("bookingConfirmation")
-        const conModal = document.getElementsByClassName("confirm-button")[0];
-        const that = this;
-        debugger
-        conModal.addEventListener('click', () => {
-            debugger
-            that.props.createBooking(booking)
-                .then(() => that.props.history.push('/index'), 
-                    () => that.renderErrors());   
-        });
+        if ( this.props.modal ) {
+            const conModal = document.getElementsByClassName("confirm-button")[0];
+            const that = this;
+            conModal.addEventListener('click', () => {
+                that.props.createBooking(booking)
+                    .then(() => that.props.history.push('/index'), 
+                        () => that.renderErrors());   
+            });
+        };
     };
 
     handleCloseModal(){

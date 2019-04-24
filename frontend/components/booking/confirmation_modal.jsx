@@ -22,8 +22,8 @@ class ConfirmationModal extends React.Component {
                 </div>
 
                 <div className="confirm-buttons">
-                    <p className="confirm-button" style={{ "background-color":"#018489"}}>Confirm</p>
-                    <p onClick={this.handleDeny} className="deny-button" style={{ 'background-color':'rgb(255, 90, 95)'}} >Deny</p>
+                    <p className="confirm-button" style={{ "backgroundColor":"#018489"}}>Confirm</p>
+                    <p onClick={this.handleDeny} className="deny-button" style={{ 'backgroundColor':'rgb(255, 90, 95)'}} >Deny</p>
                 </div>
 
             </div>

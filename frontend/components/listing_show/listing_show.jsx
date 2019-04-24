@@ -154,21 +154,25 @@ class ListingShow extends React.Component {
 
                             <form onSubmit={this.handleSubmit} >
 
-                            <div className="rating">
-                                <div className="review-ratings-css">
-                                        <div className="review-ratings-css-top" style={{ 'width': `${this.state.rating / 5 * 100}%` }}><span title="1" onClick={this.changeRating}>★</span><span title="2" onClick={this.changeRating}>★</span><span title="3" onClick={this.changeRating}>★</span><span title="4" onClick={this.changeRating}>★</span><span title="5" onClick={this.changeRating}>★</span></div>
-                                    <div className="review-ratings-css-bottom">
-                                        <span onClikc={this.handleChange} title="1" >★</span>
-                                        <span onClikc={this.handleChange} title="2" >★</span>
-                                        <span onClikc={this.handleChange} title="3" >★</span>
-                                        <span onClikc={this.handleChange} title="4" >★</span>
-                                        <span onClikc={this.handleChange} title="5" >★</span>
+                                <div className="review-form-title">
+                                    Leave a Review!
+                                </div>
+
+                                <div className="rating">
+                                    <div className="review-ratings-css">
+                                            <div className="review-ratings-css-top" style={{ 'width': `${this.state.rating / 5 * 100}%` }}><span title="1" onClick={this.changeRating}>★</span><span title="2" onClick={this.changeRating}>★</span><span title="3" onClick={this.changeRating}>★</span><span title="4" onClick={this.changeRating}>★</span><span title="5" onClick={this.changeRating}>★</span></div>
+                                        <div className="review-ratings-css-bottom">
+                                            <span onClick={this.changeRating} title="1" >★</span>
+                                            <span onClick={this.changeRating} title="2" >★</span>
+                                            <span onClick={this.changeRating} title="3" >★</span>
+                                            <span onClick={this.changeRating} title="4" >★</span>
+                                            <span onClick={this.changeRating} title="5" >★</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
-                            <input type="submit" />
+                                <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="30" rows="10"></textarea>
+                                <input type="submit" />
                             </form>
 
                         </div>

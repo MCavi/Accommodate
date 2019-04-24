@@ -46,7 +46,6 @@ class ListingShow extends React.Component {
     }
 
     changeRating(e){
-        debugger
         this.setState({ rating: parseInt(e.target.title)})
     }
 

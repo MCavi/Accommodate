@@ -6,7 +6,6 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import ConfirmationModal from '../booking/confirmation_modal_container'
 
 function Modal({ modal, booking, closeModal }) {
-    debugger
     if (!modal) {
         return null;
     }

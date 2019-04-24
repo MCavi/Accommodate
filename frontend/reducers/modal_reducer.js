@@ -1,7 +1,6 @@
 import { OPEN_MODAL, CLOSE_MODAL, CONFIRM_MODAL } from '../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
-    debugger
     switch (action.type) {
         default:
             return state;

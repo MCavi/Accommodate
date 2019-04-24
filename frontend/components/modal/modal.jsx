@@ -5,7 +5,8 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import ConfirmationModal from '../booking/confirmation_modal_container'
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, booking, closeModal }) {
+    debugger
     if (!modal) {
         return null;
     }
@@ -19,7 +20,7 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />;
             break;
         case "bookingConfirmation":
-            component = <ConfirmationModal />
+            component = <ConfirmationModal booking={booking}/>
             break;
         default:
             return null;
@@ -35,7 +36,8 @@ function Modal({ modal, closeModal }) {
 
 const msp = ({ui}) => {
     return {
-        modal: ui.modal
+        modal: ui.modal,
+        booking: ui.booking
     };
 };
 

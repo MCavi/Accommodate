@@ -5,10 +5,18 @@ class ConfirmationModal extends React.Component {
     constructor(props) {
         super(props);
         this.handleDeny = this.handleDeny.bind(this);
+        this.handleConfirm = this.handleConfirm.bind(this);
     }
 
     handleDeny(){
         this.props.closeModal();
+    }
+
+    handleConfirm(){
+        this.props.closeModal();
+        this.props.createBooking(this.props.booking)
+            .then(() => this.props.history.push('/index'),
+                () => this.renderErrors());
     }
 
 
@@ -22,7 +30,7 @@ class ConfirmationModal extends React.Component {
                 </div>
 
                 <div className="confirm-buttons">
-                    <p className="confirm-button" style={{ "backgroundColor":"#018489"}}>Confirm</p>
+                    <p className="confirm-button" style={{ "backgroundColor":"#018489"}} onClick={this.handleConfirm}>Confirm</p>
                     <p onClick={this.handleDeny} className="deny-button" style={{ 'backgroundColor':'rgb(255, 90, 95)'}} >Deny</p>
                 </div>
 

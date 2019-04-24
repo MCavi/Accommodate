@@ -3,7 +3,7 @@ import React from 'react';
 class ListingIndexItem extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.listing || {}
+        this.state = this.props.listing;
     }
 
     render(){
@@ -11,9 +11,13 @@ class ListingIndexItem extends React.Component {
         const pics = ['grid-item-image-container1', 'grid-item-image-container2', 'grid-item-image-container3', 'grid-item-image-container4', 'grid-item-image-container5']
         const random = Math.floor(Math.random() * 4)
         const pic = pics[random];
+
+        if (!this.state) {
+            return <div></div>
+        }
+
         return(
             <>
-
                 <div className={pic}>
                     <div className="arrow-container">
                         <div className="arrows" onClick={this.handleLeft}><i className="fas fa-angle-left"></i></div>

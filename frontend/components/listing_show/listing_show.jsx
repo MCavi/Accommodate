@@ -152,7 +152,7 @@ class ListingShow extends React.Component {
 
                             <div className="shadow-line"></div>
 
-                            <form onSubmit={this.handleSubmit} >
+                            <form onSubmit={this.handleSubmit} className="review-form">
 
                                 <div className="review-form-title">
                                     Leave a Review!

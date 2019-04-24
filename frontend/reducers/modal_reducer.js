@@ -1,12 +1,15 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, CONFIRM_MODAL } from '../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
+    debugger
     switch (action.type) {
+        default:
+            return state;
         case OPEN_MODAL:
             return action.modal;
         case CLOSE_MODAL:
             return null;
-        default:
-            return state;
+        case CONFIRM_MODAL:
+            return action.modal;
     }
 }

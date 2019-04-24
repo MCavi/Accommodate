@@ -1,0 +1,15 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    height: 6%;
+}
+
+.review-form input {
+    width: 35%;
+    background-color: #018489;
+    color: white;
+    
+}

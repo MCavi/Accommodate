@@ -136,7 +136,7 @@
     margin: 0 auto; 
     top:80px;
     width:1048px;
-    height:4602px; 
+    height:fit-content; 
     display:flex;
 }
 
@@ -149,11 +149,6 @@
     height:100%;
     padding:8px;
 }
-
-// .show-info div {
-//     padding: 13px 0 13px 0;
-
-// }
 
 .show-title {
     color: rgb(72,72,72);
@@ -177,7 +172,6 @@
     line-height: 22px;
     padding-bottom: 15px;
     padding-top: 10px;
-    /* border-bottom: 1px rgb(235,235,235) solid; */
 }
 
 .show-capacity {
@@ -289,7 +283,6 @@
 }
 
 .checkout-review {
-    /* margin-bottom: 20px; */
     color: rgb(0, 132, 137);
     font-size: 9px;
     font-weight: 400;
@@ -523,7 +516,3 @@
     font-size: 20px;
   }
 }
-
-
-/* -------------------------------------------------- */
-/* -------------------------------------------------- */

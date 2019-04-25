@@ -174,7 +174,7 @@ class ListingShow extends React.Component {
                                     </div>
                                 </div>
 
-                                <textarea onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="50" rows="5"></textarea>
+                                <textarea type="text" onChange={this.handleChange("body")} value={this.state.body} name="" id="" cols="50" rows="5" placeholder="type a review..." ></textarea>
                                 <input type="submit" />
                             </form>
 

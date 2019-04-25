@@ -29,3 +29,16 @@
     padding-right: 20px;
     cursor: pointer;
 }
+
+textarea {
+    font-size: 16px;
+    color: rgb(72,72,72);
+    padding-left: 12px;
+    padding-top: 10px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+

@@ -16,4 +16,4 @@ const mdp = dispatch => ({
     fetchBookings: () => dispatch(fetchBookings()),
 })
 
-export default connect(msp, mdp)(UserShow)
+export default connect(msp, mdp)(UserShow);

@@ -93,6 +93,10 @@
     max-height: 36px;
 }
 
+..redLogo:hover {
+    cursor: pointer;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -205,6 +209,7 @@ input:focus{
 }
 
 .profile-icon {
+    border: 1px solid #484848;
     border-radius: 50%;
     width: 65%;
 }

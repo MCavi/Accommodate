@@ -1,7 +1,5 @@
 class Api::ReviewsController < ApplicationController
-
-    # before_action :require_loggin only :create
-
+    
     def create 
         @review = Review.new(review_params)
         @review.author_id = current_user.id

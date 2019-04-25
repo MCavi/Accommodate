@@ -59,11 +59,13 @@ class ListingShow extends React.Component {
         // LOL 
         if (this.props.listing.listing && this.props.reviews) {
             listingReviews = this.props.reviews.map((review) => {
-                numRating += 1
-                ratingTotal += review.rating
-                return (
-                    <ReviewItem review={review} key={review.id}/> 
-                );
+                if ( review.listing_id === this.props.listing.listing.id ) {
+                    numRating += 1
+                    ratingTotal += review.rating
+                    return (
+                        <ReviewItem review={review} key={review.id}/> 
+                    );
+                };
             });
         }
         if (this.props.listing.listing) {

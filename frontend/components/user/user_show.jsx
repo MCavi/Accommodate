@@ -14,7 +14,7 @@ class UserShow extends React.Component {
     }
 
     render(){
-
+        
         const usersReviews = [];
         const usersBookings = [];
 
@@ -38,7 +38,7 @@ class UserShow extends React.Component {
             });
         };
 
-        if (usersBookings.length > 1) {
+        if (usersBookings.length > 0) {
             userBookingItems = usersBookings.map(booking => {
                 return (
                     <BookingItem booking={booking} key={booking.id} />

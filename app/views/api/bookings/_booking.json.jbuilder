@@ -1,1 +1,1 @@
-json.extract! booking, :listing_id, :start_date, :end_date 
+json.extract! booking, :renter_id, :listing_id, :start_date, :end_date 

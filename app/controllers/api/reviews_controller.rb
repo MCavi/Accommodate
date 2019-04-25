@@ -11,7 +11,11 @@ class Api::ReviewsController < ApplicationController
     end 
 
     def index
-        @reviews = Review.where(listing_id: params[:listingId]).includes(:author)
+        if params[:listing_id]
+            @reviews = Review.where(listing_id: params[:listingId]).includes(:author)
+        else 
+            @reviews = Review.all
+        end 
         render :index
     end 
 

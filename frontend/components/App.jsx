@@ -11,6 +11,7 @@ const App = () => (
         <div className="yeah">
             <Modal /> 
             <AuthRoute exact path="/" component={Splash} />
+
             <ProtectedRoute exact path="/index" component={ListingIndexContainer} />
             <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
             <ProtectedRoute exact path="/listings/:listingId" component={ListingShowContainer} />

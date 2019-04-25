@@ -1,6 +1,7 @@
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const CONFIRM_MODAL = "CONFIRM_MODAL";
+export const THANKYOU_MODAL = "THANKYOU_MODAL";
 
 export const openModal = modal => {
     return {

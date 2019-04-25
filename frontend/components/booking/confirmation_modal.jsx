@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from '@sweetalert/with-react';
 
 
 class ConfirmationModal extends React.Component {
@@ -16,16 +17,26 @@ class ConfirmationModal extends React.Component {
         this.props.closeModal()
         this.props.createBooking(this.props.booking)
             .then(() => this.props.history.push('/index'))
+        swal(
+            <h1>Booking successful!</h1>,
+            {
+                icon: "success",
+            })
     };
 
 
     render(){
-
         return (
             <div className="confirmation-modal">
 
                 <div className="confirm-message">
-                    <p>Are you sure you want to book this listing?</p>
+                    <p>Are you sure you want to booking this listing?</p>
+                </div>
+
+                <div className="confirmation-listing-info">
+                    <div>
+
+                    </div>
                 </div>
 
                 <div className="confirm-buttons">

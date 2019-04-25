@@ -12,7 +12,7 @@ class UserShow extends React.Component {
     render(){
         return(
             <div>
-                <h1>Bench BnB</h1>
+                
             </div>
         )
     }

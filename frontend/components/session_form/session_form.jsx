@@ -18,9 +18,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        
-        // this.props.actionForm(user).then(this.props.closeModal);
+        const user = Object.assign({}, this.state);        
         this.props.actionForm(user).then(this.props.closeModal);
     }
 
@@ -56,8 +54,9 @@ class SessionForm extends React.Component {
                         <button onClick={this.handleSubmitDemo}>Log in Demo User</button>
                     </div>
 
-                    <div className="login-form-input">
-                        <div>Don't Have an Account? <p onClick={this.handleChangeModal} >Sign Up</p> </div> 
+                    <div className="switch-modal">
+                        <p style={{ "color": "rgb(72, 72, 72)" }}>Don't Have an Account?</p>
+                        <p onClick={this.handleChangeModal} >Sign Up</p> 
                     </div>
                     
                 </form>
@@ -83,8 +82,9 @@ class SessionForm extends React.Component {
                     <div className="login-form-input">
                         <input type="submit" value="Sign Up" />
                     </div>
-                    <div className="login-form-input">
-                        <div>Already have an Accommodate account? <p onClick={this.handleChangeModal}>Log In</p></div>
+                    <div className="switch-modal">
+                        <p style={{ "color":"rgb(72, 72, 72)"}}>Already have an Accommodate account?</p>
+                        <p onClick={this.handleChangeModal}>Log In</p>
                     </div>
                 </form>
             )

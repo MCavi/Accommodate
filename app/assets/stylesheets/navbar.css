@@ -32,7 +32,6 @@
 .search-field input {
     height: 48px;
     width: 410px;
-    /* margin-left: 26px; */
     border: 1px rgb(235, 235, 235) solid;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -153,7 +152,11 @@ body {
     justify-content: space-around;
     align-items: flex-start;
     width: 504px;
+}
 
+.switch-modal p {
+    cursor: pointer;
+    color: rgb(255,90,95);
 }
 
 .login-form-input {

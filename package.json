@@ -5,6 +5,7 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@sweetalert/with-react": "^0.1.1",
     "airbnb-js-shims": "^2.1.1",
     "airbnb-prop-types": "^2.12.0",
     "babel-loader": "^8.0.5",
@@ -21,6 +22,7 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "sweetalert": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },

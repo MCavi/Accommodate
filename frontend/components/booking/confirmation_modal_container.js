@@ -6,10 +6,12 @@ import { createBooking } from '../../actions/bookings_actions';
 
 
 
-const msp = ({entities}, ownProps) => ({  
+const msp = ({entities}, ownProps) => {
+    return {
     listing: entities.listings[ownProps.match.params.listingId],
     bookings: entities.bookings
-});
+    }
+};
 
 const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal()),

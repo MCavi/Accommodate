@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, CONFIRM_MODAL } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, CONFIRM_MODAL, THANKYOU_MODAL } from '../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
     switch (action.type) {

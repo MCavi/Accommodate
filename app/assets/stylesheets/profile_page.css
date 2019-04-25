@@ -1,0 +1,40 @@
+.main-section {
+    top: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    margin: 0 auto;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-section p{
+    font-size: 24px;
+    color: #484848;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-section img {
+    border: 2px solid #484848;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.profile-list-section h2{
+    text-align: center;
+    font-size: 24px;
+    color: #484848;
+    text-decoration: underline;
+}
+
+.profile-list-section {
+    width: 70%;
+    margin: 0 auto;
+}

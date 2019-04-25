@@ -30,7 +30,7 @@ class UserShow extends React.Component {
             if (booking.renter_id === this.props.user.id) usersBookings.push(booking);
         });
 
-        if ( usersReviews.length > 1 ) {
+        if ( usersReviews.length > 0  ) {
             userReviewItems = usersReviews.map(review => {
                 return (
                     <ReviewItem review={review} key={review.id} />

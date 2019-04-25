@@ -1,5 +1,7 @@
 import React from 'react';
 import NavBar from '../navbar/navbar';
+import ReviewItem from '../reviews/review_item';
+import BookingItem from '../booking/booking_item';
 
 class UserShow extends React.Component {
     constructor(props){
@@ -16,13 +18,33 @@ class UserShow extends React.Component {
         const usersReviews = [];
         const usersBookings = [];
 
-        this.props.reviews.forEach( review => {
-            if ( review.author_id === this.props.user.id ) usersReviews.push(review);
-        })
+        let userReviewItems = null
+        let userBookingItems = null
 
-        this.props.bookings.forEach(booking => {
-            if (booking.author_id === this.props.user.id) usersBookings.push(booking);
-        })
+
+        Object.values(this.props.reviews).forEach( review => {
+            if ( review.author_id === this.props.user.id ) usersReviews.push(review);
+        });
+
+        Object.values(this.props.bookings).forEach( booking => {
+            if (booking.renter_id === this.props.user.id) usersBookings.push(booking);
+        });
+
+        if ( usersReviews.length > 1 ) {
+            userReviewItems = usersReviews.map(review => {
+                return (
+                    <ReviewItem review={review} key={review.id} />
+                );
+            });
+        };
+
+        if (usersBookings.length > 1) {
+            userBookingItems = usersBookings.map(booking => {
+                return (
+                    <BookingItem booking={booking} key={booking.id} />
+                );
+            });
+        };
 
 
         return(
@@ -35,9 +57,15 @@ class UserShow extends React.Component {
                     </div>
                     
                     <div className="profile-list-section">
+                        <h2>Your Reviews</h2>
                         <ul>
-                            {null}
+                            {userReviewItems}
                         </ul>
+
+                        <h2>Your Bookings</h2>
+                        <div>
+                            {userBookingItems}
+                        </div>
                     </div>
 
                 </div>        

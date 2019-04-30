@@ -50,3 +50,6 @@ class User < ApplicationRecord
     end 
 
 end 
+
+
+# p.photo.attach(io: File.open("/Users/marcus/Desktop/IMG_8488.jpg"), filename: "IMG_8488.jpg")

@@ -18,8 +18,9 @@ class UserShow extends React.Component {
         const usersReviews = [];
         const usersBookings = [];
 
-        let userReviewItems = null
-        let userBookingItems = null
+        let userReviewItems = null;
+        let userBookingItems = null;
+        let picture = null;
 
 
         Object.values(this.props.reviews).forEach( review => {
@@ -46,13 +47,17 @@ class UserShow extends React.Component {
             });
         };
 
+        if (this.props.user.photoUrl) {
+            picture = this.props.user.photoUrl;
+        }
 
+        debugger
         return(
             <div>
                 <NavBar />
                 <div className="main-section">
                     <div className="profile-section">
-                        <img src={window.defaultThumbnail} alt="User Thumbnail"/>
+                        <img src={picture} alt="User Thumbnail"/>
                         <p className="profile-user-name">Hello, {this.props.user.first_name} {this.props.user.last_name}</p>
                     </div>
                     
@@ -64,11 +69,13 @@ class UserShow extends React.Component {
 
                         <h2>Your Bookings</h2>
                         <div>
+
                             {userBookingItems}
                         </div>
                     </div>
 
                 </div>        
+
             </div>
         )
     }

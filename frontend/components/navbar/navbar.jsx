@@ -11,7 +11,6 @@ class NavBar extends React.Component {
         super(props)
         this.state = {
             dropped: false,
-            firstSubmit: false
         };
         this.dropDown = this.dropDown.bind(this) 
         this.unDrop = this.unDrop.bind(this);
@@ -21,9 +20,6 @@ class NavBar extends React.Component {
 
     handleChange(){
         this.initAutocomplete();
-        console.log(this.autoComplete.getPlace());
-        console.log(this.autoComplete);
-        this.setState({ firstSubmit: false });
     }
 
     handleSubmit(e){

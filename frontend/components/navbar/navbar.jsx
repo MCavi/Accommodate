@@ -17,10 +17,14 @@ class NavBar extends React.Component {
         this.geolocate = this.geolocate.bind(this);
     }
 
+     componentDidMount(){
+         this.initAutocomplete();
+     }
 
-    handleChange(){
-        this.initAutocomplete();
-    }
+
+    // handleChange(){
+        // this.autoComplete
+    // }
 
     handleSubmit(e){
         e.preventDefault();
@@ -96,7 +100,7 @@ class NavBar extends React.Component {
                         </Link>
                         <form className="search-field" onSubmit={(e) => this.handleSubmit(e)}>
                             <button type="submit"><i className="fa fa-search"></i></button>
-                            <input id="autocomplete" type="text" onFocus={this.geolocate} onChange={this.handleChange.bind(this)} className="controls" placeholder="Try Venice, Los Angeles" />
+                            <input id="autocomplete" type="text" onFocus={this.geolocate} className="controls" placeholder="Try Venice, Los Angeles" />
                         </form>
                         
                     </div>

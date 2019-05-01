@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :email, :password_digest, :session_token, :first_name, :last_name, presence: true
     validates :email, :session_token, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
-    has_one_attached :photo
+    # has_one_attached :photo
 
     has_many :listings,
         class_name: :Listing,
@@ -52,4 +52,3 @@ class User < ApplicationRecord
 end 
 
 
-# p.photo.attach(io: File.open("/Users/marcus/Desktop/IMG_8488.jpg"), filename: "IMG_8488.jpg")

@@ -20,7 +20,6 @@ class UserShow extends React.Component {
 
         let userReviewItems = null;
         let userBookingItems = null;
-        // let picture = null;
 
 
         Object.values(this.props.reviews).forEach( review => {
@@ -46,10 +45,6 @@ class UserShow extends React.Component {
                 );
             });
         };
-
-        // if (this.props.user.photoUrl) {
-        //     picture = this.props.user.photoUrl;
-        // }
 
         return(
             <div>

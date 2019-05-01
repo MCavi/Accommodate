@@ -51,13 +51,12 @@ class UserShow extends React.Component {
             picture = this.props.user.photoUrl;
         }
 
-        debugger
         return(
             <div>
                 <NavBar />
                 <div className="main-section">
                     <div className="profile-section">
-                        <img src={picture} alt="User Thumbnail"/>
+                        <img src={window.defaultThumbnail} alt="User Thumbnail"/>
                         <p className="profile-user-name">Hello, {this.props.user.first_name} {this.props.user.last_name}</p>
                     </div>
                     

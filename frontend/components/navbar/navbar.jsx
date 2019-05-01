@@ -17,26 +17,19 @@ class NavBar extends React.Component {
         this.geolocate = this.geolocate.bind(this);
     }
 
-     componentDidMount(){
-         this.initAutocomplete();
-     }
-
-
-    // handleChange(){
-        // this.autoComplete
-    // }
+    componentDidMount(){
+        this.initAutocomplete();
+    }
 
     handleSubmit(e){
         e.preventDefault();
         let place = this.autoComplete.getPlace();
         if (place) {
             while (!place.geometry) {
-                console.log(place);
                 place = this.autoComplete.getPlace();
             }
+            this.props.history.push('/index');
             window.map.setCenter(this.autoComplete.getPlace().geometry.location);
-            if (this.autoComplete.getPlace() && this.autoComplete.getPlace().geometry) {
-            }
         }
     }
 

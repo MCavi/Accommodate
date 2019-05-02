@@ -20,6 +20,6 @@ All the listings that are within the bounds of the map will be rendered. Users c
 
 After selecting a listing from the listings page, users will be redirected to the show page for that listing. Here is where users can see more pictures and read important information about the listing. 
 
-![](bookingAndReviews.png)
+![](bookingsAndReviews.png)
 
 Booking the listing is also aviable for the listing show page along with leaving reviews

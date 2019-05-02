@@ -92,14 +92,14 @@ class NavBar extends React.Component {
                             <img className="redLogo" src={window.redLogo} />
                         </Link>
                         <form className="search-field" onSubmit={(e) => this.handleSubmit(e)}>
-                            <button type="submit"><i className="fa fa-search"></i></button>
+                            {/* <button type="submit"><i className="fa fa-search"></i></button> */}
                             <input id="autocomplete" type="text" onFocus={this.geolocate} className="controls" placeholder="Try Venice, Los Angeles" />
                         </form>
                         
                     </div>
                     { this.state.dropped ? (<div className="whole-screen" onClick={this.unDrop}></div>) : null }
                     <div className="logged-in-container">
-                        <button className="submit-buttons">Become a host</button>
+                        {/* <button className="submit-buttons">Become a host</button> */}
                         <div className="icon-holder" onClick={this.dropDown}>
                             <img className="profile-icon" src={window.defaultThumbnail} alt="" />
                             <div>

@@ -8,7 +8,7 @@ Accommodate is a single page application clone of AirBnB. Users can search for l
 
 Accommodate uses PostgreSQL for a database and is built on a Rails backend with a React-Redux frontend. Other technologies used include Google Maps Api, React-dates, and React-modal. 
     
-### `Listings Page`
+### Listings Page
 
 ![](inBounds.png)
 
@@ -16,7 +16,7 @@ All the listings that are within the bounds of the map will be rendered. Users c
 
 ![](autoComplete.gif)
 
-### `Listing Show Page`
+### Listing Show Page
 
 After selecting a listing from the listings page, users will be redirected to the show page for that listing. Here is where users can see more pictures and read important information about the listing. 
 

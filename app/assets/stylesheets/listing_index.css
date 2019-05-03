@@ -28,23 +28,30 @@
   cursor: pointer;
 }
 
-.grid-item-image-container1 {
+.grid-item-image-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 260px;
-    background-image: url('http://localhost:3000/assets/apartment1.jpg');
+    /* background-image: url('../images/apartment1.jpg'); */
     background-size: cover;
     background-position: center;
     border-radius: 4px;
 }
 
+.grid-item-image { 
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* 
 .grid-item-image-container2 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 260px;
-    background-image: url('http://localhost:3000/assets/apartment2.jpg');    
+    background-image: url(window.apartment1);    
     background-size: cover;
     background-position: center;
     border-radius: 4px;
@@ -55,7 +62,7 @@
     align-items: center;
     justify-content: center;
     height: 260px;
-    background-image: url('http://localhost:3000/assets/apartment3.jpg');
+    background-image: url('../images/apartment3.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 4px;
@@ -66,7 +73,7 @@
     align-items: center;
     justify-content: center;
     height: 260px;
-    background-image: url('http://localhost:3000/assets/apartment4.jpg');
+    background-image: url('../images/apartment4.jpg');    
     background-size: cover;
     background-position: center;
     border-radius: 4px;
@@ -77,11 +84,11 @@
     align-items: center;
     justify-content: center;
     height: 260px;
-    background-image: url('http://localhost:3000/assets/apartment5.jpg');
+    background-image: url('../images/apartment5.jpg');    
     background-size: cover;
     background-position: center;
     border-radius: 4px;
-}
+} */
 
 
 .arrow-container {

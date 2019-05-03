@@ -14,16 +14,24 @@ class BookingItem extends React.Component {
 
     render() {
 
-        const pics = ['grid-item-image-container1', 'grid-item-image-container2', 'grid-item-image-container3', 'grid-item-image-container4', 'grid-item-image-container5']
-        const random = Math.floor(Math.random() * 4)
-        const pic = pics[random];
+        let pics = [
+            window.apartment1,
+            window.apartment2,
+            window.apartment3,
+            window.apartment4,
+            window.apartment5
+        ]
+        let random = Math.floor(Math.random() * 4)
+        let pic = pics[random];
 
 
         return (
             <div className="main-booking-section">
 
                 <div className="main-booking-image" onClick={this.linkToShow.bind(this)}>
-                    <div className={pic} style={{margin:'20px'}}></div>
+                    <div className='grid-item-image-container' style={{ margin: '20px' }}>
+                        <img className="grid-item-image" src={pic} />
+                    </div>
                 </div>
 
                 <div className="main-booking-info">

@@ -2,7 +2,6 @@
   background-color: white;
 }
 
-
 .grid-container {
   width: 100%;
   display: flex;
@@ -33,7 +32,6 @@
     align-items: center;
     justify-content: center;
     height: 260px;
-    /* background-image: url('../images/apartment1.jpg'); */
     background-size: cover;
     background-position: center;
     border-radius: 4px;
@@ -44,52 +42,6 @@
   width: 100%;
   border-radius: 5px;
 }
-
-/* 
-.grid-item-image-container2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 260px;
-    background-image: url(window.apartment1);    
-    background-size: cover;
-    background-position: center;
-    border-radius: 4px;
-}
-
-.grid-item-image-container3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 260px;
-    background-image: url('../images/apartment3.jpg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 4px;
-}
-
-.grid-item-image-container4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 260px;
-    background-image: url('../images/apartment4.jpg');    
-    background-size: cover;
-    background-position: center;
-    border-radius: 4px;
-}
-
-.grid-item-image-container5 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 260px;
-    background-image: url('../images/apartment5.jpg');    
-    background-size: cover;
-    background-position: center;
-    border-radius: 4px;
-} */
-
 
 .arrow-container {
   display: flex;
@@ -108,10 +60,6 @@
   visibility: hidden;
   color: white;
   font-size: 50px;
-}
-
-.grid-item-image-container:hover {
-
 }
 
 .info-container {

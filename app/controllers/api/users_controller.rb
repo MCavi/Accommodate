@@ -11,7 +11,17 @@ class Api::UsersController < ApplicationController
             login(@user)
             render :show
         else
-            render json: @user.errors.full_messages
+            if params[:user][:email] == ""
+                render json: ["Email can't be blank."], status: 401
+            elsif params[:user][:first_name] == ""
+                render json: ["First Name can't be blank."], status: 401
+            elsif params[:user][:last_name] == ""
+                render json: ["Last Name can't be blank."], status: 401
+            elsif params[:user][:password] == ""
+                render json: ["Password can't be blank."], status: 401
+            else 
+                render json: ["Invalid credentials"], status: 401
+            end 
         end 
     end 
 

@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     constructor(props){
         super(props)
         this.state = {email: "", password: "", first_name: "", last_name: ""};
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
         this.handleChangeModal = this.handleChangeModal.bind(this);
@@ -71,6 +72,9 @@ class SessionForm extends React.Component {
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <div className="login-header">
                         <h3>Sign up</h3>
+                    </div>
+                    <div className="auth-errors" style={{ color: "red" }}>
+                        {errors}
                     </div>
                     <div className="login-form-input">
                         <input className="test" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />

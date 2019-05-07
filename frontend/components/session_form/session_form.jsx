@@ -33,11 +33,17 @@ class SessionForm extends React.Component {
 
 
     render() {
+        
+        let errors = this.props.errors;
+    
         if (this.props.formType === "Login") {
             return (
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <div className="login-header">
                         <h3>Log in to continue</h3>    
+                    </div>
+                    <div className="auth-errors" style={{color:"red"}}>
+                        {errors}
                     </div>
                     <div className="login-form-input">
                         <input className="test" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>

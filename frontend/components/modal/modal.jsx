@@ -36,7 +36,7 @@ function Modal({ modal, booking, closeModal }) {
 const msp = ({ui}) => {
     return {
         modal: ui.modal,
-        booking: ui.booking
+        booking: ui.booking,
     };
 };
 

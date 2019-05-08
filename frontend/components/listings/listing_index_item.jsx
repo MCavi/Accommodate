@@ -26,10 +26,6 @@ class ListingIndexItem extends React.Component {
             <>
                 <div className='grid-item-image-container'>
                     <img className="grid-item-image" src={pic}/>
-                    {/* <div className="arrow-container">
-                        <div className="arrows" onClick={this.handleLeft}><i className="fas fa-angle-left"></i></div>
-                        <div className="arrows" onClick={this.handleRight}><i className="fas fa-angle-right"></i></div>
-                    </div> */}
                 </div>
 
                 <div className="info-container">

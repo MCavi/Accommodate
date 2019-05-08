@@ -11,12 +11,11 @@ class ReviewItem extends React.Component {
     render() {
         const month = this.months[Number(this.state.created_at.slice(5, 7)) - 1]
         const year = Number(this.state.created_at.slice(0, 4))
-
         return (
             <>
                 <div className="review-container">
                     <div className="review-top-div">
-                        <div className="author-thumbnail"><img src="http://localhost:3000/assets/default-thumbnail-9ec1991b0da0d5e7960f556d8d9d025ac90796605c18256077ea3f6a18897d86.jpg" /></div>
+                        <div className="author-thumbnail"><img src={window.defaultThumbnail} /></div>
                         <div className="author-date">
                             <p className="author-first-name">{this.state.first_name}</p>
                             <p className="review-created-date">{month} {year}</p>
